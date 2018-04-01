@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Lidar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="vehicular_simulation">
+ <D_lidar_equipment_textBox>Hokuyo TOP-URG</D_lidar_equipment_textBox>
+ <D_lidar_equipment_listBox>2</D_lidar_equipment_listBox>
+  <D_lidar_value>49</D_lidar_value>
+  <D_lidar_value_text>49</D_lidar_value_text>
+  <D_lidar_vertical_range>10</D_lidar_vertical_range>
+  <D_lidar_horizontal_range>20</D_lidar_horizontal_range>
+  <D_lidar_accuracy>+/-2</D_lidar_accuracy>
+  <D_lidar_frequency>0</D_lidar_frequency>
+</Lidar>

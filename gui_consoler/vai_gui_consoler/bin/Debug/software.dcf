@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SYS_CFG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="vehicular_simulation">
+  <D_aimIP>192.168.0.1</D_aimIP>
+  <D_aim_duan>8888</D_aim_duan>
+  <D_localIP>192.168.0.2</D_localIP>
+  <D_local_duan>9999</D_local_duan>
+  <D_selectLanguage>0</D_selectLanguage>
+</SYS_CFG>

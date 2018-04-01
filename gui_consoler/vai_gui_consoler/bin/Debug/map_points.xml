@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPairOfStringVector3 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PairOfStringVector3>
+    <Key>Default</Key>
+    <Value>
+      <x>2409.6</x>
+      <y>0.8</y>
+      <z>1033.41</z>
+      <image_path>/img/0ba5c77ae9a02808e407932f403cf708.jpg</image_path>
+      <id>0</id>
+    </Value>
+  </PairOfStringVector3>
+  <PairOfStringVector3>
+    <Key>A - Home</Key>
+    <Value>
+      <x>2389.6</x>
+      <y>0.8</y>
+      <z>1033.41</z>
+      <image_path>/img/0ba5c77ae9a02808e407932f403cf708.jpg</image_path>
+      <id>1</id>
+    </Value>
+  </PairOfStringVector3>
+  <PairOfStringVector3>
+    <Key>B - Bar</Key>
+    <Value>
+      <x>3386.76</x>
+      <y>0.8</y>
+      <z>1033.19</z>
+      <image_path>/img/422a926b43bdbe483fd6dbddee5828de.jpg</image_path>
+      <id>2</id>
+    </Value>
+  </PairOfStringVector3>
+  <PairOfStringVector3>
+    <Key>C - Club</Key>
+    <Value>
+      <x>2386</x>
+      <y>0.8</y>
+      <z>1703.94</z>
+      <image_path>/img/ae10521efeeb68a0faba701084197f9b.jpg</image_path>
+      <id>3</id>
+    </Value>
+  </PairOfStringVector3>
+  <PairOfStringVector3>
+    <Key>D - School</Key>
+    <Value>
+      <x>3386</x>
+      <y>0.8</y>
+      <z>1702.81</z>
+      <image_path>/img/fa8eeae6d500090b77865a1f148d8dd8.jpg</image_path>
+      <id>4</id>
+    </Value>
+  </PairOfStringVector3>
+  <PairOfStringVector3>
+    <Key>H - Hospital</Key>
+    <Value>
+      <x>2386</x>
+      <y>0.8</y>
+      <z>1033.19</z>
+      <image_path>/img/6b5bbdfa7bdef7cf1a5b5bd9f5637fd6.jpg</image_path>
+      <id>5</id>
+    </Value>
+  </PairOfStringVector3>
+</ArrayOfPairOfStringVector3>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Radar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="vehicular_simulation">
+   <D_radar_equipment_textBox>Accessories</D_radar_equipment_textBox>
+  <D_radar_equipment_listBox>2</D_radar_equipment_listBox>
+  <D_radar_value>34</D_radar_value>
+  <D_radar_value_text>34</D_radar_value_text>
+  <D_radar_accuracy>10</D_radar_accuracy>
+  <D_radar_speed>20</D_radar_speed>
+  <D_radar_range>+/-5</D_radar_range>
+</Radar>

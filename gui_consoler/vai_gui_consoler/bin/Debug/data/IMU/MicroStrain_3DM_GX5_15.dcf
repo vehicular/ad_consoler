@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IMUClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="vehicular_simulation">
+    <D_imu_equipment_textBox>MicroStrain_3DM_GX5_15</D_imu_equipment_textBox>
+  <D_imu_equipment_listBox>2</D_imu_equipment_listBox>
+  <D_imu_roll_angle>10</D_imu_roll_angle>
+  <D_imu_pitch_angle>20</D_imu_pitch_angle>
+  <D_imu_heading_angle>40</D_imu_heading_angle>
+  <D_imu_three_axis_acceleration>30</D_imu_three_axis_acceleration>
+  <D_imu_three_axis_angular_velocity>50</D_imu_three_axis_angular_velocity>
+  <D_imu_three_axis_geomagnetic>10</D_imu_three_axis_geomagnetic>
+</IMUClass>

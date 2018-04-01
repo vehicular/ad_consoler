@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GPSClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="vehicular_simulation">
+   <D_gps_equipment_textBox>Garmin_GPS_18x_LVC</D_gps_equipment_textBox>
+  <D_gps_equipment_listBox>1</D_gps_equipment_listBox>
+  <D_gps_horizontal_positioning_accuracy>10</D_gps_horizontal_positioning_accuracy>
+  <D_gps_velocity_accuracy>10</D_gps_velocity_accuracy>
+  <D_gps_time_precision>20</D_gps_time_precision>
+</GPSClass>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CarType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="vehicular_simulation">
+  <miniCar>true</miniCar>
+  <mediumCar>false</mediumCar>
+  <bigCar>false</bigCar>
+  <speedlimite>0</speedlimite>
+  <carcorner>0</carcorner>
+  <acceleratorValue>0</acceleratorValue>
+  <acceleratorValue_text>0</acceleratorValue_text>
+  <brakeValue>0</brakeValue>
+  <brakeValue_text>0</brakeValue_text>
+</CarType>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Weather xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="vehicular_simulation">
+  <dayRadio>true</dayRadio>
+  <nightRadio>false</nightRadio>
+  <time>0</time>
+  <sunAngle>0</sunAngle>
+  <sunRadio>true</sunRadio>
+  <sunValue>0</sunValue>
+  <sunValue_text>0</sunValue_text>
+  <runRadio>false</runRadio>
+  <runValue>0</runValue>
+  <runValue_text>0</runValue_text>
+  <snowRadio>false</snowRadio>
+  <snowValue>0</snowValue>
+  <snowValue_text>0</snowValue_text>
+  <fogRadio>false</fogRadio>
+  <fogValue>2</fogValue>
+  <fogValue_text>2</fogValue_text>
+</Weather>

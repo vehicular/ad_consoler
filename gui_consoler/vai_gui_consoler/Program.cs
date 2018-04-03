@@ -16,11 +16,20 @@ namespace vehicular_simulation
      public class Program
     {
         #region InitProgram
+        public static string ApplicationName = "vehicular.ai - Autonomous Driving Simulation System - Consoler (Individual Evaluation Version)";
         private static string SYSTEM_PATH = "";
         private static string Path = "";
         public static bool EXE_isOpen = false;
         private static SYS_CFG _sysCfg;
         private static SetPath _setPath;
+
+        public static string SYSTEM_LOG_PATH = @"\log";
+
+        public static string SYSTEM_USER_PATH = @"\user";
+
+        public static string SYSTEM_CFG_TASK = @"\cfg\task";
+
+        public static Splash splash;
         #endregion
 
         /// <summary>
@@ -41,6 +50,10 @@ namespace vehicular_simulation
                 Console.WriteLine(ex.ToString());
             }
             SYSTEM_PATH = Application.StartupPath;
+
+
+            
+
             Path = SYSTEM_PATH + "/data/";            
             try
             {
@@ -62,12 +75,42 @@ namespace vehicular_simulation
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-            }            
+            }
+
+
+            splash = new Splash(SYSTEM_PATH + "\\img\\splash.jpg", "Loading Runtime Engine...");
+
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);           
+
+            Thread splashTh = new Thread(DoSplash);
+            splashTh.Start();
+            System.Threading.Thread.Sleep(50);
+
+            splash.Invoke(splash.splashUpdate, new object[] { 1, 100 });
+            System.Threading.Thread.Sleep(1000);
+            //TBD: random exception below
+            splash.Invoke(splash.splashUpdate, new object[] { 2, 100 });
+
+            // the time to end splash
+            while (splash.isVisible)
+                System.Threading.Thread.Sleep(10);
+
+            splashTh.Abort();
+            Application.DoEvents();
+
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);           
             Application.Run(new FormMain(_sysCfg, _setPath));         
             //WriteSysCfg();              
-        }       
+        }
+
+
+        private static void DoSplash()
+        {
+            splash.ShowDialog();
+        }
+
+
         //判断unity是否已经开启了
         private static void JudgeUnityIsOpen()
         {
@@ -80,6 +123,7 @@ namespace vehicular_simulation
                 }                
             }
         }
+
 
         #region ReadAndWriteFile
         //创建xml文件

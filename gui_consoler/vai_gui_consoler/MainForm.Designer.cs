@@ -240,6 +240,7 @@
             this.label53 = new System.Windows.Forms.Label();
             this.gps_equipment_listBox = new System.Windows.Forms.ListBox();
             this.gps_equipment_textBox = new System.Windows.Forms.TextBox();
+            this.label_releaseversion = new System.Windows.Forms.Label();
             this.groupBox_trigger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -1475,7 +1476,7 @@
             // languageChangeLabel
             // 
             this.languageChangeLabel.AutoSize = true;
-            this.languageChangeLabel.Location = new System.Drawing.Point(39, 567);
+            this.languageChangeLabel.Location = new System.Drawing.Point(43, 544);
             this.languageChangeLabel.Name = "languageChangeLabel";
             this.languageChangeLabel.Size = new System.Drawing.Size(55, 13);
             this.languageChangeLabel.TabIndex = 14;
@@ -1487,7 +1488,7 @@
             this.languageChange.Items.AddRange(new object[] {
             "汉语",
             "English"});
-            this.languageChange.Location = new System.Drawing.Point(20, 584);
+            this.languageChange.Location = new System.Drawing.Point(23, 560);
             this.languageChange.Name = "languageChange";
             this.languageChange.Size = new System.Drawing.Size(91, 21);
             this.languageChange.TabIndex = 15;
@@ -1659,6 +1660,7 @@
             // splitContainer_features.Panel2
             // 
             this.splitContainer_features.Panel2.BackColor = System.Drawing.Color.Silver;
+            this.splitContainer_features.Panel2.Controls.Add(this.label_releaseversion);
             this.splitContainer_features.Panel2.Controls.Add(this.groupBox_trigger);
             this.splitContainer_features.Panel2.Controls.Add(this.groupBox_sendrequest);
             this.splitContainer_features.Panel2.Controls.Add(this.languageChangeLabel);
@@ -2605,6 +2607,15 @@
             this.gps_equipment_textBox.Size = new System.Drawing.Size(182, 20);
             this.gps_equipment_textBox.TabIndex = 25;
             // 
+            // label_releaseversion
+            // 
+            this.label_releaseversion.AutoSize = true;
+            this.label_releaseversion.Location = new System.Drawing.Point(5, 599);
+            this.label_releaseversion.Name = "label_releaseversion";
+            this.label_releaseversion.Size = new System.Drawing.Size(114, 13);
+            this.label_releaseversion.TabIndex = 16;
+            this.label_releaseversion.Text = "Release Version: 1.02t";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2929,6 +2940,7 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.ListBox gps_equipment_listBox;
         private System.Windows.Forms.TextBox gps_equipment_textBox;
+        private System.Windows.Forms.Label label_releaseversion;
     }
 }
 

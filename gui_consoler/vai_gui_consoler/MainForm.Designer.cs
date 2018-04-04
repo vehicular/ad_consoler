@@ -241,6 +241,13 @@
             this.gps_equipment_listBox = new System.Windows.Forms.ListBox();
             this.gps_equipment_textBox = new System.Windows.Forms.TextBox();
             this.label_releaseversion = new System.Windows.Forms.Label();
+            this.button_resetselfip = new System.Windows.Forms.Button();
+            this.groupBox_trafficctrl = new System.Windows.Forms.GroupBox();
+            this.groupBox_roadcondition = new System.Windows.Forms.GroupBox();
+            this.groupBox_trafficcars = new System.Windows.Forms.GroupBox();
+            this.groupBox_trafficpedestrain = new System.Windows.Forms.GroupBox();
+            this.groupBox_terrain = new System.Windows.Forms.GroupBox();
+            this.button_networktest = new System.Windows.Forms.Button();
             this.groupBox_trigger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -288,7 +295,10 @@
             this.splitContainer_sensors.Panel2.SuspendLayout();
             this.splitContainer_sensors.SuspendLayout();
             this.splitContainer_sensor_1_2.Panel1.SuspendLayout();
+            this.splitContainer_sensor_1_2.Panel2.SuspendLayout();
             this.splitContainer_sensor_1_2.SuspendLayout();
+            this.splitContainer_sensor_3_4.Panel1.SuspendLayout();
+            this.splitContainer_sensor_3_4.Panel2.SuspendLayout();
             this.splitContainer_sensor_3_4.SuspendLayout();
             this.groupBox_systemmessagebox.SuspendLayout();
             this.menuStrip_main.SuspendLayout();
@@ -305,6 +315,7 @@
             this.imuGroup.SuspendLayout();
             this.groupBox_sensor4.SuspendLayout();
             this.gpsGroup.SuspendLayout();
+            this.groupBox_trafficctrl.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_trigger
@@ -414,7 +425,7 @@
             this.button_routeplan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_routeplan.Enabled = false;
-            this.button_routeplan.Location = new System.Drawing.Point(8, 18);
+            this.button_routeplan.Location = new System.Drawing.Point(8, 38);
             this.button_routeplan.Name = "button_routeplan";
             this.button_routeplan.Size = new System.Drawing.Size(114, 23);
             this.button_routeplan.TabIndex = 11;
@@ -1338,6 +1349,7 @@
             // 
             this.groupBox_simulator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_simulator.Controls.Add(this.button_resetselfip);
             this.groupBox_simulator.Controls.Add(this.textBox_ipaddress);
             this.groupBox_simulator.Controls.Add(this.button_connect);
             this.groupBox_simulator.Controls.Add(this.textBox_port);
@@ -1660,6 +1672,7 @@
             // splitContainer_features.Panel2
             // 
             this.splitContainer_features.Panel2.BackColor = System.Drawing.Color.Silver;
+            this.splitContainer_features.Panel2.Controls.Add(this.button_networktest);
             this.splitContainer_features.Panel2.Controls.Add(this.label_releaseversion);
             this.splitContainer_features.Panel2.Controls.Add(this.groupBox_trigger);
             this.splitContainer_features.Panel2.Controls.Add(this.groupBox_sendrequest);
@@ -1747,6 +1760,10 @@
             // splitContainer_sensor_1_2.Panel1
             // 
             this.splitContainer_sensor_1_2.Panel1.Controls.Add(this.tabControl_sensors);
+            // 
+            // splitContainer_sensor_1_2.Panel2
+            // 
+            this.splitContainer_sensor_1_2.Panel2.Controls.Add(this.groupBox_terrain);
             this.splitContainer_sensor_1_2.Size = new System.Drawing.Size(458, 457);
             this.splitContainer_sensor_1_2.SplitterDistance = 385;
             this.splitContainer_sensor_1_2.TabIndex = 0;
@@ -1757,6 +1774,14 @@
             this.splitContainer_sensor_3_4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer_sensor_3_4.Location = new System.Drawing.Point(0, 0);
             this.splitContainer_sensor_3_4.Name = "splitContainer_sensor_3_4";
+            // 
+            // splitContainer_sensor_3_4.Panel1
+            // 
+            this.splitContainer_sensor_3_4.Panel1.Controls.Add(this.groupBox_trafficctrl);
+            // 
+            // splitContainer_sensor_3_4.Panel2
+            // 
+            this.splitContainer_sensor_3_4.Panel2.Controls.Add(this.groupBox_roadcondition);
             this.splitContainer_sensor_3_4.Size = new System.Drawing.Size(439, 457);
             this.splitContainer_sensor_3_4.SplitterDistance = 224;
             this.splitContainer_sensor_3_4.TabIndex = 12;
@@ -2616,6 +2641,72 @@
             this.label_releaseversion.TabIndex = 16;
             this.label_releaseversion.Text = "Release Version: 1.02t";
             // 
+            // button_resetselfip
+            // 
+            this.button_resetselfip.Location = new System.Drawing.Point(10, 97);
+            this.button_resetselfip.Name = "button_resetselfip";
+            this.button_resetselfip.Size = new System.Drawing.Size(52, 23);
+            this.button_resetselfip.TabIndex = 8;
+            this.button_resetselfip.Text = "Reset";
+            this.button_resetselfip.UseVisualStyleBackColor = true;
+            this.button_resetselfip.Click += new System.EventHandler(this.button_resetselfip_Click);
+            // 
+            // groupBox_trafficctrl
+            // 
+            this.groupBox_trafficctrl.Controls.Add(this.groupBox_trafficpedestrain);
+            this.groupBox_trafficctrl.Controls.Add(this.groupBox_trafficcars);
+            this.groupBox_trafficctrl.Location = new System.Drawing.Point(16, 10);
+            this.groupBox_trafficctrl.Name = "groupBox_trafficctrl";
+            this.groupBox_trafficctrl.Size = new System.Drawing.Size(183, 183);
+            this.groupBox_trafficctrl.TabIndex = 0;
+            this.groupBox_trafficctrl.TabStop = false;
+            this.groupBox_trafficctrl.Text = "Traffic Control";
+            // 
+            // groupBox_roadcondition
+            // 
+            this.groupBox_roadcondition.Location = new System.Drawing.Point(12, 22);
+            this.groupBox_roadcondition.Name = "groupBox_roadcondition";
+            this.groupBox_roadcondition.Size = new System.Drawing.Size(165, 100);
+            this.groupBox_roadcondition.TabIndex = 0;
+            this.groupBox_roadcondition.TabStop = false;
+            this.groupBox_roadcondition.Text = "Road Condition";
+            // 
+            // groupBox_trafficcars
+            // 
+            this.groupBox_trafficcars.Location = new System.Drawing.Point(37, 23);
+            this.groupBox_trafficcars.Name = "groupBox_trafficcars";
+            this.groupBox_trafficcars.Size = new System.Drawing.Size(125, 50);
+            this.groupBox_trafficcars.TabIndex = 0;
+            this.groupBox_trafficcars.TabStop = false;
+            this.groupBox_trafficcars.Text = "vehicle";
+            // 
+            // groupBox_trafficpedestrain
+            // 
+            this.groupBox_trafficpedestrain.Location = new System.Drawing.Point(33, 96);
+            this.groupBox_trafficpedestrain.Name = "groupBox_trafficpedestrain";
+            this.groupBox_trafficpedestrain.Size = new System.Drawing.Size(125, 50);
+            this.groupBox_trafficpedestrain.TabIndex = 1;
+            this.groupBox_trafficpedestrain.TabStop = false;
+            this.groupBox_trafficpedestrain.Text = "Pedestrain";
+            // 
+            // groupBox_terrain
+            // 
+            this.groupBox_terrain.Location = new System.Drawing.Point(17, 99);
+            this.groupBox_terrain.Name = "groupBox_terrain";
+            this.groupBox_terrain.Size = new System.Drawing.Size(37, 100);
+            this.groupBox_terrain.TabIndex = 0;
+            this.groupBox_terrain.TabStop = false;
+            this.groupBox_terrain.Text = "Terrain";
+            // 
+            // button_networktest
+            // 
+            this.button_networktest.Location = new System.Drawing.Point(17, 37);
+            this.button_networktest.Name = "button_networktest";
+            this.button_networktest.Size = new System.Drawing.Size(93, 23);
+            this.button_networktest.TabIndex = 17;
+            this.button_networktest.Text = "Network Test";
+            this.button_networktest.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2697,7 +2788,10 @@
             this.splitContainer_sensors.Panel2.ResumeLayout(false);
             this.splitContainer_sensors.ResumeLayout(false);
             this.splitContainer_sensor_1_2.Panel1.ResumeLayout(false);
+            this.splitContainer_sensor_1_2.Panel2.ResumeLayout(false);
             this.splitContainer_sensor_1_2.ResumeLayout(false);
+            this.splitContainer_sensor_3_4.Panel1.ResumeLayout(false);
+            this.splitContainer_sensor_3_4.Panel2.ResumeLayout(false);
             this.splitContainer_sensor_3_4.ResumeLayout(false);
             this.groupBox_systemmessagebox.ResumeLayout(false);
             this.menuStrip_main.ResumeLayout(false);
@@ -2723,6 +2817,7 @@
             this.groupBox_sensor4.PerformLayout();
             this.gpsGroup.ResumeLayout(false);
             this.gpsGroup.PerformLayout();
+            this.groupBox_trafficctrl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2941,6 +3036,13 @@
         private System.Windows.Forms.ListBox gps_equipment_listBox;
         private System.Windows.Forms.TextBox gps_equipment_textBox;
         private System.Windows.Forms.Label label_releaseversion;
+        private System.Windows.Forms.Button button_resetselfip;
+        private System.Windows.Forms.GroupBox groupBox_trafficctrl;
+        private System.Windows.Forms.GroupBox groupBox_trafficpedestrain;
+        private System.Windows.Forms.GroupBox groupBox_trafficcars;
+        private System.Windows.Forms.GroupBox groupBox_roadcondition;
+        private System.Windows.Forms.GroupBox groupBox_terrain;
+        private System.Windows.Forms.Button button_networktest;
     }
 }
 

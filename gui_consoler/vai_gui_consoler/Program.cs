@@ -129,16 +129,16 @@ namespace vehicular_simulation
         //创建xml文件
         private static void CreateSysCfg()
         {
-            //if (File.Exists(SYSTEM_PATH + "\\vehicular.ini"))
+            //if (File.Exists(SYSTEM_PATH + "\\usrdata.dcf"))
             //{
             //    return;
             //}
             XmlSerializer db = new XmlSerializer(typeof(SYS_CFG));
-            TextWriter dbWriter = new StreamWriter(SYSTEM_PATH + "\\vehicular.ini");
+            TextWriter dbWriter = new StreamWriter(SYSTEM_PATH + "\\usrdata.dcf");
             _sysCfg = new SYS_CFG();
             //_sysCfg.D_acceleratorValue = 0;
             _sysCfg.lastDataPath = SYSTEM_PATH + @"\vehicular\UserData";
-            //sysCfg.dataPath = SYSTEM_PATH + "\\vehicular.ini";
+            //sysCfg.dataPath = SYSTEM_PATH + "\\usrdata.dcf";
             db.Serialize(dbWriter, _sysCfg);
             dbWriter.Close();
         }        
@@ -149,7 +149,7 @@ namespace vehicular_simulation
             switch (typeof(T).ToString())
             {
                 case "vehicular_simulation.SYS_CFG":
-                    fs = new FileStream(System.IO.Path.Combine(SYSTEM_PATH, "vehicular.ini"), FileMode.Open);
+                    fs = new FileStream(System.IO.Path.Combine(SYSTEM_PATH, "usrdata.dcf"), FileMode.Open);
                     break;
                 case "vehicular_simulation.SetPath":
                     fs = new FileStream(System.IO.Path.Combine(SYSTEM_PATH, "Init.ini"), FileMode.Open);
@@ -197,7 +197,7 @@ namespace vehicular_simulation
                     break;
 
                 case "vehicular_simulation.SYS_CFG":
-                    _writer = new StreamWriter(SYSTEM_PATH + "/vehicular.ini");
+                    _writer = new StreamWriter(SYSTEM_PATH + "/usrdata.dcf");
                     break;
                 case "vehicular_simulation.Radar":
                     _writer = new StreamWriter(SYSTEM_PATH + "/data/Radar/radar.dcf");

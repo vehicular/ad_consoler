@@ -1192,7 +1192,7 @@ namespace vehicular_simulation
             startList = new List<string>() ;
             endList = new List<string>() ;
             SYSTEM_PATH = Application.StartupPath;
-            dataPath = SYSTEM_PATH + "\\vehicular.ini";
+            dataPath = SYSTEM_PATH + "\\usrdata.dcf";
             ecuipPath = SYSTEM_PATH + "\\ECUip.dcf";           
 
             ReadStartEndPosition(setPath.StartEndPosition);
@@ -1815,11 +1815,40 @@ namespace vehicular_simulation
 
         private void button_ecuconnect_Click(object sender, EventArgs e)
         {
-            socketClient.SendMessage("<<" + MessageCatalog.ECU_IP_PORT + ">>:" + 
-                this.textBox_ecuipaddress.Text + ":" + 
-                this.textBox_ecuport.Text + ":" +
-                this.textBox_lidarip.Text + ":" +
-                this.textBox_lidarport.Text);
+            string[] ecu = this.textBox_ecuipaddress.Text.Split('.');
+            string[] sim = this.textBox_ipaddress.Text.Split('.');
+
+            bool isSameNet = false;
+            try
+            {
+                if (ecu[0] == sim[0] && ecu[1] == sim[1] && ecu[2] == sim[2])
+                    isSameNet = true;
+            }
+            catch
+            {
+                isSameNet = false;
+            }
+            if(!isSameNet)
+            {
+                if (DialogResult.OK == MessageBox.Show(
+                    "Please confirm IP address are correct. Click \"OK\" to continue posting.\nClick \"Cancel\" to modify the IP.",
+                    "Network Confirmation",
+                     MessageBoxButtons.OKCancel,
+                     MessageBoxIcon.Warning,
+                     MessageBoxDefaultButton.Button1))
+                {
+                    isSameNet = true;
+                }
+            }
+
+            if (isSameNet)
+            {
+                socketClient.SendMessage("<<" + MessageCatalog.ECU_IP_PORT + ">>:" +
+                    this.textBox_ecuipaddress.Text + ":" +
+                    this.textBox_ecuport.Text + ":" +
+                    this.textBox_lidarip.Text + ":" +
+                    this.textBox_lidarport.Text);
+            }
         }
 
         private void button_routeplan_Click(object sender, EventArgs e)
@@ -1884,6 +1913,12 @@ namespace vehicular_simulation
             socketClient.SendMessage("<<" + MessageCatalog.DATA_COLLECT + ">>:" +
                 "A/M" + ":" +
                 "vehicle");
+        }
+
+        private void button_resetselfip_Click(object sender, EventArgs e)
+        {
+            this.textBox_ipaddress.Text = GetIP4Address().ToString();
+            this.textBox_port.Text = "13010";
         }
 
         /*delegate void SetMessageCallback(string message);

@@ -1,2 +1,25 @@
+**.log
+
+/gui_consoler/.vs/**
+
+/gui_consoler/vai_gui_consoler/.vs/**
+
+/gui_consoler/vai_gui_consoler/obj/**
+
+/gui_consoler/vai_gui_consoler/bin/Debug/Logs/*
+
+log_*
+
+/gui_consoler/vai_gui_consoler/bin/Debug/vai_gui_consoler.exe
+
+/gui_consoler/vai_gui_consoler/bin/Debug/vai_gui_consoler.pdb
+
+*.lock
+
+*.ide
+
+*.ide-shm
+
+*.ide-wal
 
 gui_consoler/.vs/gui_consoler/v14/.suo

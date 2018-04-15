@@ -10,9 +10,9 @@
 
 log_*
 
-/gui_consoler/vai_gui_consoler/bin/Debug/*.exe
+vai_gui_consoler.exe
 
-/gui_consoler/vai_gui_consoler/bin/Debug/*.pdb
+vai_gui_consoler.pdb
 
 *.lock
 

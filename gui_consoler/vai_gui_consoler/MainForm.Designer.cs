@@ -145,6 +145,8 @@
             this.checkBox_saveip = new System.Windows.Forms.CheckBox();
             this.button_runpause = new System.Windows.Forms.Button();
             this.splitContainer_path = new System.Windows.Forms.SplitContainer();
+            this.groupBox_terrain = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button_genwaypoints = new System.Windows.Forms.Button();
             this.button_pathinfoview = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
@@ -154,6 +156,7 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer_sensors = new System.Windows.Forms.SplitContainer();
+            this.groupBox_sensors = new System.Windows.Forms.GroupBox();
             this.tabControl_sensors = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -230,7 +233,6 @@
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.groupBox_terrain = new System.Windows.Forms.GroupBox();
             this.splitContainer_sensor_3_4 = new System.Windows.Forms.SplitContainer();
             this.groupBox_trafficctrl = new System.Windows.Forms.GroupBox();
             this.groupBox_trafficpedestrain = new System.Windows.Forms.GroupBox();
@@ -247,8 +249,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox_sensors = new System.Windows.Forms.GroupBox();
             this.groupBox_trigger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -282,6 +282,7 @@
             this.splitContainer_path.Panel1.SuspendLayout();
             this.splitContainer_path.Panel2.SuspendLayout();
             this.splitContainer_path.SuspendLayout();
+            this.groupBox_terrain.SuspendLayout();
             this.splitContainer_features.Panel1.SuspendLayout();
             this.splitContainer_features.Panel2.SuspendLayout();
             this.splitContainer_features.SuspendLayout();
@@ -295,6 +296,7 @@
             this.splitContainer_sensors.Panel1.SuspendLayout();
             this.splitContainer_sensors.Panel2.SuspendLayout();
             this.splitContainer_sensors.SuspendLayout();
+            this.groupBox_sensors.SuspendLayout();
             this.tabControl_sensors.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox_sensor1.SuspendLayout();
@@ -308,14 +310,12 @@
             this.tabPage4.SuspendLayout();
             this.groupBox_sensor4.SuspendLayout();
             this.gpsGroup.SuspendLayout();
-            this.groupBox_terrain.SuspendLayout();
             this.splitContainer_sensor_3_4.Panel1.SuspendLayout();
             this.splitContainer_sensor_3_4.Panel2.SuspendLayout();
             this.splitContainer_sensor_3_4.SuspendLayout();
             this.groupBox_trafficctrl.SuspendLayout();
             this.groupBox_systemmessagebox.SuspendLayout();
             this.menuStrip_main.SuspendLayout();
-            this.groupBox_sensors.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_trigger
@@ -1632,6 +1632,28 @@
             this.splitContainer_path.SplitterDistance = 201;
             this.splitContainer_path.TabIndex = 1;
             // 
+            // groupBox_terrain
+            // 
+            this.groupBox_terrain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_terrain.Controls.Add(this.comboBox1);
+            this.groupBox_terrain.Location = new System.Drawing.Point(8, 10);
+            this.groupBox_terrain.Name = "groupBox_terrain";
+            this.groupBox_terrain.Size = new System.Drawing.Size(177, 73);
+            this.groupBox_terrain.TabIndex = 0;
+            this.groupBox_terrain.TabStop = false;
+            this.groupBox_terrain.Text = "Terrain";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 41);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(165, 20);
+            this.comboBox1.TabIndex = 17;
+            // 
             // button_genwaypoints
             // 
             this.button_genwaypoints.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1761,6 +1783,17 @@
             this.splitContainer_sensors.Size = new System.Drawing.Size(845, 418);
             this.splitContainer_sensors.SplitterDistance = 539;
             this.splitContainer_sensors.TabIndex = 0;
+            // 
+            // groupBox_sensors
+            // 
+            this.groupBox_sensors.Controls.Add(this.tabControl_sensors);
+            this.groupBox_sensors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_sensors.Location = new System.Drawing.Point(0, 0);
+            this.groupBox_sensors.Name = "groupBox_sensors";
+            this.groupBox_sensors.Size = new System.Drawing.Size(539, 418);
+            this.groupBox_sensors.TabIndex = 1;
+            this.groupBox_sensors.TabStop = false;
+            this.groupBox_sensors.Text = "Sensors Config";
             // 
             // tabControl_sensors
             // 
@@ -1985,6 +2018,7 @@
             this.lidar_equipment_listBox.Name = "lidar_equipment_listBox";
             this.lidar_equipment_listBox.Size = new System.Drawing.Size(498, 64);
             this.lidar_equipment_listBox.TabIndex = 15;
+            this.lidar_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // lidar_equipment_textBox
             // 
@@ -2165,6 +2199,7 @@
             this.radar_equipment_listBox.Name = "radar_equipment_listBox";
             this.radar_equipment_listBox.Size = new System.Drawing.Size(502, 52);
             this.radar_equipment_listBox.TabIndex = 22;
+            this.radar_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -2353,6 +2388,7 @@
             this.imu_equipment_listBox.Name = "imu_equipment_listBox";
             this.imu_equipment_listBox.Size = new System.Drawing.Size(172, 64);
             this.imu_equipment_listBox.TabIndex = 26;
+            this.imu_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // tabPage4
             // 
@@ -2462,6 +2498,7 @@
             this.gps_equipment_listBox.Name = "gps_equipment_listBox";
             this.gps_equipment_listBox.Size = new System.Drawing.Size(182, 52);
             this.gps_equipment_listBox.TabIndex = 26;
+            this.gps_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
             // gps_equipment_textBox
             // 
@@ -2492,7 +2529,7 @@
             // 
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(375, 394);
+            this.tabPage9.Size = new System.Drawing.Size(525, 372);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Speed";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2501,7 +2538,7 @@
             // 
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(375, 394);
+            this.tabPage10.Size = new System.Drawing.Size(525, 372);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "Ambient Light";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2510,7 +2547,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(375, 394);
+            this.tabPage6.Size = new System.Drawing.Size(525, 372);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Rain";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2519,7 +2556,7 @@
             // 
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(375, 394);
+            this.tabPage11.Size = new System.Drawing.Size(525, 372);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "TPMS";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -2528,7 +2565,7 @@
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(375, 394);
+            this.tabPage8.Size = new System.Drawing.Size(525, 372);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "IR Night Vision";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2537,22 +2574,10 @@
             // 
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(375, 394);
+            this.tabPage13.Size = new System.Drawing.Size(525, 372);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Odometry";
             this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // groupBox_terrain
-            // 
-            this.groupBox_terrain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_terrain.Controls.Add(this.comboBox1);
-            this.groupBox_terrain.Location = new System.Drawing.Point(8, 10);
-            this.groupBox_terrain.Name = "groupBox_terrain";
-            this.groupBox_terrain.Size = new System.Drawing.Size(177, 73);
-            this.groupBox_terrain.TabIndex = 0;
-            this.groupBox_terrain.TabStop = false;
-            this.groupBox_terrain.Text = "Terrain";
             // 
             // splitContainer_sensor_3_4
             // 
@@ -2705,27 +2730,6 @@
             this.versionToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.versionToolStripMenuItem.Text = "Version";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 20);
-            this.comboBox1.TabIndex = 17;
-            // 
-            // groupBox_sensors
-            // 
-            this.groupBox_sensors.Controls.Add(this.tabControl_sensors);
-            this.groupBox_sensors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_sensors.Location = new System.Drawing.Point(0, 0);
-            this.groupBox_sensors.Name = "groupBox_sensors";
-            this.groupBox_sensors.Size = new System.Drawing.Size(539, 418);
-            this.groupBox_sensors.TabIndex = 1;
-            this.groupBox_sensors.TabStop = false;
-            this.groupBox_sensors.Text = "Sensors Config";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2792,6 +2796,7 @@
             this.splitContainer_path.Panel1.PerformLayout();
             this.splitContainer_path.Panel2.ResumeLayout(false);
             this.splitContainer_path.ResumeLayout(false);
+            this.groupBox_terrain.ResumeLayout(false);
             this.splitContainer_features.Panel1.ResumeLayout(false);
             this.splitContainer_features.Panel2.ResumeLayout(false);
             this.splitContainer_features.Panel2.PerformLayout();
@@ -2806,6 +2811,7 @@
             this.splitContainer_sensors.Panel1.ResumeLayout(false);
             this.splitContainer_sensors.Panel2.ResumeLayout(false);
             this.splitContainer_sensors.ResumeLayout(false);
+            this.groupBox_sensors.ResumeLayout(false);
             this.tabControl_sensors.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox_sensor1.ResumeLayout(false);
@@ -2827,7 +2833,6 @@
             this.groupBox_sensor4.PerformLayout();
             this.gpsGroup.ResumeLayout(false);
             this.gpsGroup.PerformLayout();
-            this.groupBox_terrain.ResumeLayout(false);
             this.splitContainer_sensor_3_4.Panel1.ResumeLayout(false);
             this.splitContainer_sensor_3_4.Panel2.ResumeLayout(false);
             this.splitContainer_sensor_3_4.ResumeLayout(false);
@@ -2835,7 +2840,6 @@
             this.groupBox_systemmessagebox.ResumeLayout(false);
             this.menuStrip_main.ResumeLayout(false);
             this.menuStrip_main.PerformLayout();
-            this.groupBox_sensors.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

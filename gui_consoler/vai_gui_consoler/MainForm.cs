@@ -1926,6 +1926,11 @@ namespace vehicular_simulation
 
         }
 
+        private void comboBox_terraintype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         /*delegate void SetMessageCallback(string message);
         public void SetMessage(string message)
         {

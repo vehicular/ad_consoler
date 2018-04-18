@@ -115,6 +115,7 @@
             this.textBox_sendtestingmsg = new System.Windows.Forms.TextBox();
             this.button_request = new System.Windows.Forms.Button();
             this.groupBox_ecu = new System.Windows.Forms.GroupBox();
+            this.comboBox_ecutype = new System.Windows.Forms.ComboBox();
             this.textBox_lidarip = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.textBox_lidarport = new System.Windows.Forms.TextBox();
@@ -146,7 +147,7 @@
             this.button_runpause = new System.Windows.Forms.Button();
             this.splitContainer_path = new System.Windows.Forms.SplitContainer();
             this.groupBox_terrain = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_terraintype = new System.Windows.Forms.ComboBox();
             this.button_genwaypoints = new System.Windows.Forms.Button();
             this.button_pathinfoview = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
@@ -249,7 +250,10 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox_ecutype = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.radioButton_runbywaypoints = new System.Windows.Forms.RadioButton();
+            this.radioButton_runbywires = new System.Windows.Forms.RadioButton();
             this.groupBox_trigger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -317,6 +321,7 @@
             this.groupBox_trafficctrl.SuspendLayout();
             this.groupBox_systemmessagebox.SuspendLayout();
             this.menuStrip_main.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_trigger
@@ -330,9 +335,9 @@
             this.groupBox_trigger.Controls.Add(this.radioButton_frontlane);
             this.groupBox_trigger.Controls.Add(this.radioButton_trafficlights);
             this.groupBox_trigger.Controls.Add(this.radioButton_carfront);
-            this.groupBox_trigger.Location = new System.Drawing.Point(4, 114);
+            this.groupBox_trigger.Location = new System.Drawing.Point(6, 59);
             this.groupBox_trigger.Name = "groupBox_trigger";
-            this.groupBox_trigger.Size = new System.Drawing.Size(104, 238);
+            this.groupBox_trigger.Size = new System.Drawing.Size(104, 220);
             this.groupBox_trigger.TabIndex = 9;
             this.groupBox_trigger.TabStop = false;
             this.groupBox_trigger.Text = "Trigger";
@@ -342,18 +347,18 @@
             this.label34.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label34.AutoSize = true;
             this.label34.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label34.Location = new System.Drawing.Point(9, 29);
+            this.label34.Location = new System.Drawing.Point(9, 27);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(211, 15);
+            this.label34.Size = new System.Drawing.Size(259, 14);
             this.label34.TabIndex = 6;
             this.label34.Text = "Let Simulator have camera to take pictures";
             // 
             // radioButton_road
             // 
             this.radioButton_road.AutoSize = true;
-            this.radioButton_road.Location = new System.Drawing.Point(8, 147);
+            this.radioButton_road.Location = new System.Drawing.Point(8, 136);
             this.radioButton_road.Name = "radioButton_road";
-            this.radioButton_road.Size = new System.Drawing.Size(80, 17);
+            this.radioButton_road.Size = new System.Drawing.Size(83, 16);
             this.radioButton_road.TabIndex = 5;
             this.radioButton_road.Text = "Road Signs";
             this.radioButton_road.UseVisualStyleBackColor = true;
@@ -361,9 +366,9 @@
             // radioButton_pedestrain
             // 
             this.radioButton_pedestrain.AutoSize = true;
-            this.radioButton_pedestrain.Location = new System.Drawing.Point(8, 125);
+            this.radioButton_pedestrain.Location = new System.Drawing.Point(8, 115);
             this.radioButton_pedestrain.Name = "radioButton_pedestrain";
-            this.radioButton_pedestrain.Size = new System.Drawing.Size(75, 17);
+            this.radioButton_pedestrain.Size = new System.Drawing.Size(83, 16);
             this.radioButton_pedestrain.TabIndex = 4;
             this.radioButton_pedestrain.Text = "Pedestrian";
             this.radioButton_pedestrain.UseVisualStyleBackColor = true;
@@ -371,9 +376,9 @@
             // button_trigger
             // 
             this.button_trigger.Enabled = false;
-            this.button_trigger.Location = new System.Drawing.Point(13, 195);
+            this.button_trigger.Location = new System.Drawing.Point(13, 180);
             this.button_trigger.Name = "button_trigger";
-            this.button_trigger.Size = new System.Drawing.Size(75, 23);
+            this.button_trigger.Size = new System.Drawing.Size(75, 21);
             this.button_trigger.TabIndex = 3;
             this.button_trigger.Text = "Trigger";
             this.button_trigger.UseVisualStyleBackColor = true;
@@ -382,9 +387,9 @@
             // radioButton_frontlane
             // 
             this.radioButton_frontlane.AutoSize = true;
-            this.radioButton_frontlane.Location = new System.Drawing.Point(8, 101);
+            this.radioButton_frontlane.Location = new System.Drawing.Point(8, 93);
             this.radioButton_frontlane.Name = "radioButton_frontlane";
-            this.radioButton_frontlane.Size = new System.Drawing.Size(81, 17);
+            this.radioButton_frontlane.Size = new System.Drawing.Size(89, 16);
             this.radioButton_frontlane.TabIndex = 2;
             this.radioButton_frontlane.Text = "Front Lanes";
             this.radioButton_frontlane.UseVisualStyleBackColor = true;
@@ -392,9 +397,9 @@
             // radioButton_trafficlights
             // 
             this.radioButton_trafficlights.AutoSize = true;
-            this.radioButton_trafficlights.Location = new System.Drawing.Point(8, 77);
+            this.radioButton_trafficlights.Location = new System.Drawing.Point(8, 71);
             this.radioButton_trafficlights.Name = "radioButton_trafficlights";
-            this.radioButton_trafficlights.Size = new System.Drawing.Size(86, 17);
+            this.radioButton_trafficlights.Size = new System.Drawing.Size(107, 16);
             this.radioButton_trafficlights.TabIndex = 1;
             this.radioButton_trafficlights.Text = "Traffic Lights";
             this.radioButton_trafficlights.UseVisualStyleBackColor = true;
@@ -403,9 +408,9 @@
             // 
             this.radioButton_carfront.AutoSize = true;
             this.radioButton_carfront.Checked = true;
-            this.radioButton_carfront.Location = new System.Drawing.Point(8, 53);
+            this.radioButton_carfront.Location = new System.Drawing.Point(8, 49);
             this.radioButton_carfront.Name = "radioButton_carfront";
-            this.radioButton_carfront.Size = new System.Drawing.Size(98, 17);
+            this.radioButton_carfront.Size = new System.Drawing.Size(113, 16);
             this.radioButton_carfront.TabIndex = 0;
             this.radioButton_carfront.TabStop = true;
             this.radioButton_carfront.Text = "Front Vehicules";
@@ -415,9 +420,9 @@
             // 
             this.checkBox_testinglooproute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox_testinglooproute.AutoSize = true;
-            this.checkBox_testinglooproute.Location = new System.Drawing.Point(64, 122);
+            this.checkBox_testinglooproute.Location = new System.Drawing.Point(66, 113);
             this.checkBox_testinglooproute.Name = "checkBox_testinglooproute";
-            this.checkBox_testinglooproute.Size = new System.Drawing.Size(122, 17);
+            this.checkBox_testinglooproute.Size = new System.Drawing.Size(120, 16);
             this.checkBox_testinglooproute.TabIndex = 12;
             this.checkBox_testinglooproute.Text = "使用测试循环路径";
             this.checkBox_testinglooproute.UseVisualStyleBackColor = true;
@@ -427,9 +432,9 @@
             this.button_routeplan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_routeplan.Enabled = false;
-            this.button_routeplan.Location = new System.Drawing.Point(8, 93);
+            this.button_routeplan.Location = new System.Drawing.Point(8, 86);
             this.button_routeplan.Name = "button_routeplan";
-            this.button_routeplan.Size = new System.Drawing.Size(177, 23);
+            this.button_routeplan.Size = new System.Drawing.Size(177, 21);
             this.button_routeplan.TabIndex = 11;
             this.button_routeplan.Text = "Plan";
             this.button_routeplan.UseVisualStyleBackColor = true;
@@ -439,9 +444,9 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 184);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 170);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(178, 116);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -450,9 +455,9 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Location = new System.Drawing.Point(8, 353);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 326);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(177, 126);
+            this.pictureBox2.Size = new System.Drawing.Size(177, 116);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
@@ -463,9 +468,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.endPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.endPosition.FormattingEnabled = true;
-            this.endPosition.Location = new System.Drawing.Point(70, 325);
+            this.endPosition.Location = new System.Drawing.Point(70, 300);
             this.endPosition.Name = "endPosition";
-            this.endPosition.Size = new System.Drawing.Size(115, 21);
+            this.endPosition.Size = new System.Drawing.Size(115, 20);
             this.endPosition.TabIndex = 7;
             this.endPosition.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             this.endPosition.MouseHover += new System.EventHandler(this.endPosition_MouseHover);
@@ -476,9 +481,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.startPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.startPosition.FormattingEnabled = true;
-            this.startPosition.Location = new System.Drawing.Point(70, 156);
+            this.startPosition.Location = new System.Drawing.Point(70, 144);
             this.startPosition.Name = "startPosition";
-            this.startPosition.Size = new System.Drawing.Size(115, 21);
+            this.startPosition.Size = new System.Drawing.Size(115, 20);
             this.startPosition.TabIndex = 6;
             this.startPosition.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.startPosition.MouseHover += new System.EventHandler(this.startPosition_MouseHover);
@@ -486,8 +491,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(11, 328);
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(11, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 2;
@@ -496,8 +501,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(11, 159);
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(11, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 1;
@@ -505,7 +510,7 @@
             // 
             // sunAngle
             // 
-            this.sunAngle.Location = new System.Drawing.Point(190, 59);
+            this.sunAngle.Location = new System.Drawing.Point(190, 54);
             this.sunAngle.Name = "sunAngle";
             this.sunAngle.Size = new System.Drawing.Size(65, 21);
             this.sunAngle.TabIndex = 5;
@@ -513,7 +518,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(115, 59);
+            this.label21.Location = new System.Drawing.Point(115, 54);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(53, 12);
             this.label21.TabIndex = 4;
@@ -536,7 +541,7 @@
             "16",
             "17",
             "18"});
-            this.time.Location = new System.Drawing.Point(194, 26);
+            this.time.Location = new System.Drawing.Point(194, 24);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(61, 20);
             this.time.TabIndex = 3;
@@ -544,7 +549,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(115, 30);
+            this.label20.Location = new System.Drawing.Point(115, 28);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(53, 12);
             this.label20.TabIndex = 2;
@@ -558,10 +563,10 @@
             this.groupBox4.Controls.Add(this.dayRadio);
             this.groupBox4.Controls.Add(this.time);
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox4.Location = new System.Drawing.Point(11, 323);
+            this.groupBox4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox4.Location = new System.Drawing.Point(11, 298);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(289, 111);
+            this.groupBox4.Size = new System.Drawing.Size(289, 102);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "昼夜选择";
@@ -569,7 +574,7 @@
             // nightRadio
             // 
             this.nightRadio.AutoSize = true;
-            this.nightRadio.Location = new System.Drawing.Point(23, 86);
+            this.nightRadio.Location = new System.Drawing.Point(23, 79);
             this.nightRadio.Name = "nightRadio";
             this.nightRadio.Size = new System.Drawing.Size(47, 16);
             this.nightRadio.TabIndex = 1;
@@ -581,7 +586,7 @@
             // dayRadio
             // 
             this.dayRadio.AutoSize = true;
-            this.dayRadio.Location = new System.Drawing.Point(28, 30);
+            this.dayRadio.Location = new System.Drawing.Point(28, 28);
             this.dayRadio.Name = "dayRadio";
             this.dayRadio.Size = new System.Drawing.Size(47, 16);
             this.dayRadio.TabIndex = 0;
@@ -602,10 +607,10 @@
             this.weatherGroup.Controls.Add(this.rainGroup);
             this.weatherGroup.Controls.Add(this.snowRadio);
             this.weatherGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.weatherGroup.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.weatherGroup.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.weatherGroup.Location = new System.Drawing.Point(0, 0);
             this.weatherGroup.Name = "weatherGroup";
-            this.weatherGroup.Size = new System.Drawing.Size(474, 150);
+            this.weatherGroup.Size = new System.Drawing.Size(474, 137);
             this.weatherGroup.TabIndex = 8;
             this.weatherGroup.TabStop = false;
             this.weatherGroup.Text = "天气选择";
@@ -618,9 +623,9 @@
             this.sunGroup.Controls.Add(this.label55);
             this.sunGroup.Controls.Add(this.sunValue_text);
             this.sunGroup.Controls.Add(this.sunValue);
-            this.sunGroup.Location = new System.Drawing.Point(64, 22);
+            this.sunGroup.Location = new System.Drawing.Point(64, 20);
             this.sunGroup.Name = "sunGroup";
-            this.sunGroup.Size = new System.Drawing.Size(342, 63);
+            this.sunGroup.Size = new System.Drawing.Size(342, 58);
             this.sunGroup.TabIndex = 23;
             this.sunGroup.TabStop = false;
             this.sunGroup.Text = "晴天程度";
@@ -630,9 +635,9 @@
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Enabled = false;
-            this.pictureBox3.Location = new System.Drawing.Point(259, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(259, 11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 44);
+            this.pictureBox3.Size = new System.Drawing.Size(66, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
@@ -640,7 +645,7 @@
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(176, 39);
+            this.label59.Location = new System.Drawing.Point(176, 36);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(29, 12);
             this.label59.TabIndex = 4;
@@ -649,7 +654,7 @@
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(88, 39);
+            this.label58.Location = new System.Drawing.Point(88, 36);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(53, 12);
             this.label58.TabIndex = 3;
@@ -658,7 +663,7 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(21, 37);
+            this.label55.Location = new System.Drawing.Point(21, 34);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(29, 12);
             this.label55.TabIndex = 2;
@@ -666,7 +671,7 @@
             // 
             // sunValue_text
             // 
-            this.sunValue_text.Location = new System.Drawing.Point(211, 17);
+            this.sunValue_text.Location = new System.Drawing.Point(211, 16);
             this.sunValue_text.Name = "sunValue_text";
             this.sunValue_text.Size = new System.Drawing.Size(42, 21);
             this.sunValue_text.TabIndex = 1;
@@ -674,7 +679,7 @@
             // sunValue
             // 
             this.sunValue.LargeChange = 1;
-            this.sunValue.Location = new System.Drawing.Point(23, 18);
+            this.sunValue.Location = new System.Drawing.Point(23, 17);
             this.sunValue.Maximum = 5;
             this.sunValue.Name = "sunValue";
             this.sunValue.Size = new System.Drawing.Size(185, 17);
@@ -685,7 +690,7 @@
             // 
             this.sunRadio.AutoSize = true;
             this.sunRadio.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.sunRadio.Location = new System.Drawing.Point(11, 44);
+            this.sunRadio.Location = new System.Drawing.Point(11, 41);
             this.sunRadio.Name = "sunRadio";
             this.sunRadio.Size = new System.Drawing.Size(47, 16);
             this.sunRadio.TabIndex = 22;
@@ -702,25 +707,25 @@
             this.fogGroup.Controls.Add(this.label8);
             this.fogGroup.Controls.Add(this.fogValue);
             this.fogGroup.Controls.Add(this.label7);
-            this.fogGroup.Location = new System.Drawing.Point(64, 256);
+            this.fogGroup.Location = new System.Drawing.Point(64, 236);
             this.fogGroup.Name = "fogGroup";
-            this.fogGroup.Size = new System.Drawing.Size(342, 63);
+            this.fogGroup.Size = new System.Drawing.Size(342, 58);
             this.fogGroup.TabIndex = 16;
             this.fogGroup.TabStop = false;
             this.fogGroup.Text = "雾的浓度";
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(261, 12);
+            this.pictureBox6.Location = new System.Drawing.Point(261, 11);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(65, 44);
+            this.pictureBox6.Size = new System.Drawing.Size(65, 41);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 22;
             this.pictureBox6.TabStop = false;
             // 
             // fogValue_text
             // 
-            this.fogValue_text.Location = new System.Drawing.Point(211, 17);
+            this.fogValue_text.Location = new System.Drawing.Point(211, 16);
             this.fogValue_text.Name = "fogValue_text";
             this.fogValue_text.Size = new System.Drawing.Size(42, 21);
             this.fogValue_text.TabIndex = 21;
@@ -728,7 +733,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(98, 36);
+            this.label11.Location = new System.Drawing.Point(98, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 20;
@@ -737,7 +742,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(176, 36);
+            this.label8.Location = new System.Drawing.Point(176, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 19;
@@ -746,7 +751,7 @@
             // fogValue
             // 
             this.fogValue.LargeChange = 1;
-            this.fogValue.Location = new System.Drawing.Point(19, 18);
+            this.fogValue.Location = new System.Drawing.Point(19, 17);
             this.fogValue.Maximum = 5;
             this.fogValue.Name = "fogValue";
             this.fogValue.Size = new System.Drawing.Size(186, 16);
@@ -757,7 +762,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 36);
+            this.label7.Location = new System.Drawing.Point(17, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 17;
@@ -771,25 +776,25 @@
             this.snowGroup.Controls.Add(this.label6);
             this.snowGroup.Controls.Add(this.label5);
             this.snowGroup.Controls.Add(this.snowValue);
-            this.snowGroup.Location = new System.Drawing.Point(64, 176);
+            this.snowGroup.Location = new System.Drawing.Point(64, 162);
             this.snowGroup.Name = "snowGroup";
-            this.snowGroup.Size = new System.Drawing.Size(342, 63);
+            this.snowGroup.Size = new System.Drawing.Size(342, 58);
             this.snowGroup.TabIndex = 15;
             this.snowGroup.TabStop = false;
             this.snowGroup.Text = "下雪程度";
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(260, 12);
+            this.pictureBox5.Location = new System.Drawing.Point(260, 11);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(66, 44);
+            this.pictureBox5.Size = new System.Drawing.Size(66, 41);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             // 
             // snowValue_text
             // 
-            this.snowValue_text.Location = new System.Drawing.Point(212, 18);
+            this.snowValue_text.Location = new System.Drawing.Point(212, 17);
             this.snowValue_text.Name = "snowValue_text";
             this.snowValue_text.Size = new System.Drawing.Size(42, 21);
             this.snowValue_text.TabIndex = 16;
@@ -797,7 +802,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(98, 36);
+            this.label10.Location = new System.Drawing.Point(98, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 15;
@@ -806,7 +811,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(176, 40);
+            this.label6.Location = new System.Drawing.Point(176, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 14;
@@ -815,7 +820,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 40);
+            this.label5.Location = new System.Drawing.Point(21, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 13;
@@ -824,7 +829,7 @@
             // snowValue
             // 
             this.snowValue.LargeChange = 1;
-            this.snowValue.Location = new System.Drawing.Point(20, 18);
+            this.snowValue.Location = new System.Drawing.Point(20, 17);
             this.snowValue.Maximum = 5;
             this.snowValue.Name = "snowValue";
             this.snowValue.Size = new System.Drawing.Size(185, 16);
@@ -835,7 +840,7 @@
             // fogRadio
             // 
             this.fogRadio.AutoSize = true;
-            this.fogRadio.Location = new System.Drawing.Point(11, 278);
+            this.fogRadio.Location = new System.Drawing.Point(11, 257);
             this.fogRadio.Name = "fogRadio";
             this.fogRadio.Size = new System.Drawing.Size(47, 16);
             this.fogRadio.TabIndex = 21;
@@ -848,7 +853,7 @@
             // rainRadio
             // 
             this.rainRadio.AutoSize = true;
-            this.rainRadio.Location = new System.Drawing.Point(11, 124);
+            this.rainRadio.Location = new System.Drawing.Point(11, 114);
             this.rainRadio.Name = "rainRadio";
             this.rainRadio.Size = new System.Drawing.Size(47, 16);
             this.rainRadio.TabIndex = 19;
@@ -866,9 +871,9 @@
             this.rainGroup.Controls.Add(this.rainValue);
             this.rainGroup.Controls.Add(this.label3);
             this.rainGroup.Controls.Add(this.label4);
-            this.rainGroup.Location = new System.Drawing.Point(64, 98);
+            this.rainGroup.Location = new System.Drawing.Point(64, 90);
             this.rainGroup.Name = "rainGroup";
-            this.rainGroup.Size = new System.Drawing.Size(341, 63);
+            this.rainGroup.Size = new System.Drawing.Size(341, 58);
             this.rainGroup.TabIndex = 14;
             this.rainGroup.TabStop = false;
             this.rainGroup.Text = "下雨程度";
@@ -877,16 +882,16 @@
             // 
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(259, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(259, 11);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(65, 44);
+            this.pictureBox4.Size = new System.Drawing.Size(65, 41);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
             // 
             // rainValue_text
             // 
-            this.rainValue_text.Location = new System.Drawing.Point(211, 21);
+            this.rainValue_text.Location = new System.Drawing.Point(211, 19);
             this.rainValue_text.Name = "rainValue_text";
             this.rainValue_text.Size = new System.Drawing.Size(42, 21);
             this.rainValue_text.TabIndex = 9;
@@ -894,7 +899,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(98, 37);
+            this.label9.Location = new System.Drawing.Point(98, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 8;
@@ -903,7 +908,7 @@
             // rainValue
             // 
             this.rainValue.LargeChange = 1;
-            this.rainValue.Location = new System.Drawing.Point(20, 18);
+            this.rainValue.Location = new System.Drawing.Point(20, 17);
             this.rainValue.Maximum = 5;
             this.rainValue.Name = "rainValue";
             this.rainValue.Size = new System.Drawing.Size(187, 17);
@@ -914,7 +919,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 40);
+            this.label3.Location = new System.Drawing.Point(17, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 6;
@@ -923,7 +928,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(176, 37);
+            this.label4.Location = new System.Drawing.Point(176, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 7;
@@ -932,7 +937,7 @@
             // snowRadio
             // 
             this.snowRadio.AutoSize = true;
-            this.snowRadio.Location = new System.Drawing.Point(11, 199);
+            this.snowRadio.Location = new System.Drawing.Point(11, 184);
             this.snowRadio.Name = "snowRadio";
             this.snowRadio.Size = new System.Drawing.Size(47, 16);
             this.snowRadio.TabIndex = 20;
@@ -952,37 +957,37 @@
             this.groupBox1.Controls.Add(this.mediumCar);
             this.groupBox1.Controls.Add(this.miniCar);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(367, 150);
+            this.groupBox1.Size = new System.Drawing.Size(367, 137);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "车子类型选择";
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(217, 46);
+            this.pictureBox9.Location = new System.Drawing.Point(217, 42);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(83, 51);
+            this.pictureBox9.Size = new System.Drawing.Size(83, 47);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 6;
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(116, 46);
+            this.pictureBox8.Location = new System.Drawing.Point(116, 42);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(77, 51);
+            this.pictureBox8.Size = new System.Drawing.Size(77, 47);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 5;
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(7, 46);
+            this.pictureBox7.Location = new System.Drawing.Point(7, 42);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(83, 51);
+            this.pictureBox7.Size = new System.Drawing.Size(83, 47);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 4;
             this.pictureBox7.TabStop = false;
@@ -1001,9 +1006,9 @@
             this.CarGroup.Controls.Add(this.label42);
             this.CarGroup.Controls.Add(this.label41);
             this.CarGroup.Controls.Add(this.label40);
-            this.CarGroup.Location = new System.Drawing.Point(7, 107);
+            this.CarGroup.Location = new System.Drawing.Point(7, 99);
             this.CarGroup.Name = "CarGroup";
-            this.CarGroup.Size = new System.Drawing.Size(347, 254);
+            this.CarGroup.Size = new System.Drawing.Size(347, 234);
             this.CarGroup.TabIndex = 3;
             this.CarGroup.TabStop = false;
             this.CarGroup.Text = "汽车参数选择";
@@ -1015,7 +1020,7 @@
             "20",
             "30",
             "50"});
-            this.carcorner.Location = new System.Drawing.Point(203, 24);
+            this.carcorner.Location = new System.Drawing.Point(203, 22);
             this.carcorner.Name = "carcorner";
             this.carcorner.Size = new System.Drawing.Size(53, 20);
             this.carcorner.TabIndex = 12;
@@ -1028,7 +1033,7 @@
             "10",
             "20",
             "30"});
-            this.speedlimite.Location = new System.Drawing.Point(65, 23);
+            this.speedlimite.Location = new System.Drawing.Point(65, 21);
             this.speedlimite.Name = "speedlimite";
             this.speedlimite.Size = new System.Drawing.Size(55, 20);
             this.speedlimite.TabIndex = 11;
@@ -1040,9 +1045,9 @@
             this.groupBox3.Controls.Add(this.label51);
             this.groupBox3.Controls.Add(this.label48);
             this.groupBox3.Controls.Add(this.brakeValue);
-            this.groupBox3.Location = new System.Drawing.Point(66, 155);
+            this.groupBox3.Location = new System.Drawing.Point(66, 143);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(265, 82);
+            this.groupBox3.Size = new System.Drawing.Size(265, 76);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "刹车灵敏度设置";
@@ -1050,7 +1055,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(197, 50);
+            this.label52.Location = new System.Drawing.Point(197, 46);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(53, 12);
             this.label52.TabIndex = 11;
@@ -1059,7 +1064,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(103, 50);
+            this.label51.Location = new System.Drawing.Point(103, 46);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(53, 12);
             this.label51.TabIndex = 10;
@@ -1068,7 +1073,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(16, 50);
+            this.label48.Location = new System.Drawing.Point(16, 46);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(53, 12);
             this.label48.TabIndex = 9;
@@ -1077,7 +1082,7 @@
             // brakeValue
             // 
             this.brakeValue.LargeChange = 1;
-            this.brakeValue.Location = new System.Drawing.Point(18, 23);
+            this.brakeValue.Location = new System.Drawing.Point(18, 21);
             this.brakeValue.Maximum = 5;
             this.brakeValue.Name = "brakeValue";
             this.brakeValue.Size = new System.Drawing.Size(232, 17);
@@ -1091,9 +1096,9 @@
             this.groupBox2.Controls.Add(this.label46);
             this.groupBox2.Controls.Add(this.label45);
             this.groupBox2.Controls.Add(this.acceleratorValue);
-            this.groupBox2.Location = new System.Drawing.Point(66, 59);
+            this.groupBox2.Location = new System.Drawing.Point(66, 54);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 83);
+            this.groupBox2.Size = new System.Drawing.Size(265, 77);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "油门灵敏度设置";
@@ -1101,7 +1106,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(197, 57);
+            this.label47.Location = new System.Drawing.Point(197, 53);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(53, 12);
             this.label47.TabIndex = 11;
@@ -1110,7 +1115,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(103, 57);
+            this.label46.Location = new System.Drawing.Point(103, 53);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(53, 12);
             this.label46.TabIndex = 10;
@@ -1119,7 +1124,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(15, 57);
+            this.label45.Location = new System.Drawing.Point(15, 53);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(53, 12);
             this.label45.TabIndex = 9;
@@ -1128,7 +1133,7 @@
             // acceleratorValue
             // 
             this.acceleratorValue.LargeChange = 1;
-            this.acceleratorValue.Location = new System.Drawing.Point(17, 28);
+            this.acceleratorValue.Location = new System.Drawing.Point(17, 26);
             this.acceleratorValue.Maximum = 5;
             this.acceleratorValue.Name = "acceleratorValue";
             this.acceleratorValue.Size = new System.Drawing.Size(233, 17);
@@ -1138,14 +1143,14 @@
             // 
             // acceleratorValue_text
             // 
-            this.acceleratorValue_text.Location = new System.Drawing.Point(15, 87);
+            this.acceleratorValue_text.Location = new System.Drawing.Point(15, 80);
             this.acceleratorValue_text.Name = "acceleratorValue_text";
             this.acceleratorValue_text.Size = new System.Drawing.Size(44, 21);
             this.acceleratorValue_text.TabIndex = 5;
             // 
             // brakeValue_text
             // 
-            this.brakeValue_text.Location = new System.Drawing.Point(15, 176);
+            this.brakeValue_text.Location = new System.Drawing.Point(15, 162);
             this.brakeValue_text.Name = "brakeValue_text";
             this.brakeValue_text.Size = new System.Drawing.Size(44, 21);
             this.brakeValue_text.TabIndex = 7;
@@ -1153,7 +1158,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(16, 155);
+            this.label43.Location = new System.Drawing.Point(16, 143);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(29, 12);
             this.label43.TabIndex = 6;
@@ -1162,7 +1167,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(16, 60);
+            this.label42.Location = new System.Drawing.Point(16, 55);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(29, 12);
             this.label42.TabIndex = 4;
@@ -1171,7 +1176,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(132, 28);
+            this.label41.Location = new System.Drawing.Point(132, 26);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(65, 12);
             this.label41.TabIndex = 2;
@@ -1180,7 +1185,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(6, 28);
+            this.label40.Location = new System.Drawing.Point(6, 26);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(53, 12);
             this.label40.TabIndex = 0;
@@ -1189,7 +1194,7 @@
             // bigCar
             // 
             this.bigCar.AutoSize = true;
-            this.bigCar.Location = new System.Drawing.Point(217, 22);
+            this.bigCar.Location = new System.Drawing.Point(217, 20);
             this.bigCar.Name = "bigCar";
             this.bigCar.Size = new System.Drawing.Size(71, 16);
             this.bigCar.TabIndex = 2;
@@ -1201,7 +1206,7 @@
             // mediumCar
             // 
             this.mediumCar.AutoSize = true;
-            this.mediumCar.Location = new System.Drawing.Point(116, 22);
+            this.mediumCar.Location = new System.Drawing.Point(116, 20);
             this.mediumCar.Name = "mediumCar";
             this.mediumCar.Size = new System.Drawing.Size(71, 16);
             this.mediumCar.TabIndex = 1;
@@ -1214,7 +1219,7 @@
             // 
             this.miniCar.AutoSize = true;
             this.miniCar.Checked = true;
-            this.miniCar.Location = new System.Drawing.Point(7, 22);
+            this.miniCar.Location = new System.Drawing.Point(7, 20);
             this.miniCar.Name = "miniCar";
             this.miniCar.Size = new System.Drawing.Size(71, 16);
             this.miniCar.TabIndex = 0;
@@ -1231,26 +1236,26 @@
             this.groupBox_sendrequest.Controls.Add(this.textBox_sendtestingmsg);
             this.groupBox_sendrequest.Controls.Add(this.button_request);
             this.groupBox_sendrequest.Enabled = false;
-            this.groupBox_sendrequest.Location = new System.Drawing.Point(8, 400);
+            this.groupBox_sendrequest.Location = new System.Drawing.Point(7, 401);
             this.groupBox_sendrequest.Name = "groupBox_sendrequest";
-            this.groupBox_sendrequest.Size = new System.Drawing.Size(100, 102);
+            this.groupBox_sendrequest.Size = new System.Drawing.Size(109, 94);
             this.groupBox_sendrequest.TabIndex = 8;
             this.groupBox_sendrequest.TabStop = false;
             this.groupBox_sendrequest.Text = "Request to Server";
             // 
             // textBox_sendtestingmsg
             // 
-            this.textBox_sendtestingmsg.Location = new System.Drawing.Point(12, 29);
+            this.textBox_sendtestingmsg.Location = new System.Drawing.Point(6, 32);
             this.textBox_sendtestingmsg.Name = "textBox_sendtestingmsg";
-            this.textBox_sendtestingmsg.Size = new System.Drawing.Size(88, 20);
+            this.textBox_sendtestingmsg.Size = new System.Drawing.Size(88, 21);
             this.textBox_sendtestingmsg.TabIndex = 4;
             this.textBox_sendtestingmsg.Text = "Testing message....";
             // 
             // button_request
             // 
-            this.button_request.Location = new System.Drawing.Point(15, 60);
+            this.button_request.Location = new System.Drawing.Point(6, 65);
             this.button_request.Name = "button_request";
-            this.button_request.Size = new System.Drawing.Size(92, 23);
+            this.button_request.Size = new System.Drawing.Size(92, 21);
             this.button_request.TabIndex = 2;
             this.button_request.Text = "send request";
             this.button_request.UseVisualStyleBackColor = true;
@@ -1268,29 +1273,45 @@
             this.groupBox_ecu.Controls.Add(this.button_ecuconnect);
             this.groupBox_ecu.Controls.Add(this.textBox_ecuport);
             this.groupBox_ecu.Controls.Add(this.label24);
-            this.groupBox_ecu.Location = new System.Drawing.Point(3, 210);
+            this.groupBox_ecu.Location = new System.Drawing.Point(3, 194);
             this.groupBox_ecu.Name = "groupBox_ecu";
-            this.groupBox_ecu.Size = new System.Drawing.Size(173, 199);
+            this.groupBox_ecu.Size = new System.Drawing.Size(173, 184);
             this.groupBox_ecu.TabIndex = 9;
             this.groupBox_ecu.TabStop = false;
             this.groupBox_ecu.Text = "Device";
+            // 
+            // comboBox_ecutype
+            // 
+            this.comboBox_ecutype.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_ecutype.FormattingEnabled = true;
+            this.comboBox_ecutype.Items.AddRange(new object[] {
+            "Nvidia Drive PX2 AutoChauffeur",
+            "Nvidia Drive PX2 AutoCruise",
+            "Nvidia TX2",
+            "Vehicular VX1"});
+            this.comboBox_ecutype.Location = new System.Drawing.Point(10, 67);
+            this.comboBox_ecutype.Name = "comboBox_ecutype";
+            this.comboBox_ecutype.Size = new System.Drawing.Size(157, 20);
+            this.comboBox_ecutype.TabIndex = 12;
+            this.comboBox_ecutype.SelectedIndexChanged += new System.EventHandler(this.comboBox_ecutype_SelectedIndexChanged);
             // 
             // textBox_lidarip
             // 
             this.textBox_lidarip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_lidarip.Location = new System.Drawing.Point(60, 115);
+            this.textBox_lidarip.Location = new System.Drawing.Point(60, 106);
             this.textBox_lidarip.Name = "textBox_lidarip";
-            this.textBox_lidarip.Size = new System.Drawing.Size(103, 20);
+            this.textBox_lidarip.Size = new System.Drawing.Size(103, 21);
             this.textBox_lidarip.TabIndex = 10;
             this.textBox_lidarip.Text = "192.168.1.11";
             // 
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(4, 120);
+            this.label60.Location = new System.Drawing.Point(4, 111);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(43, 13);
+            this.label60.Size = new System.Drawing.Size(53, 12);
             this.label60.TabIndex = 11;
             this.label60.Text = "Lidar IP";
             // 
@@ -1299,9 +1320,9 @@
             this.textBox_lidarport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_lidarport.Enabled = false;
-            this.textBox_lidarport.Location = new System.Drawing.Point(81, 140);
+            this.textBox_lidarport.Location = new System.Drawing.Point(81, 129);
             this.textBox_lidarport.Name = "textBox_lidarport";
-            this.textBox_lidarport.Size = new System.Drawing.Size(84, 20);
+            this.textBox_lidarport.Size = new System.Drawing.Size(84, 21);
             this.textBox_lidarport.TabIndex = 8;
             this.textBox_lidarport.Text = "2368";
             // 
@@ -1309,9 +1330,9 @@
             // 
             this.textBox_ecuipaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ecuipaddress.Location = new System.Drawing.Point(60, 20);
+            this.textBox_ecuipaddress.Location = new System.Drawing.Point(60, 18);
             this.textBox_ecuipaddress.Name = "textBox_ecuipaddress";
-            this.textBox_ecuipaddress.Size = new System.Drawing.Size(107, 20);
+            this.textBox_ecuipaddress.Size = new System.Drawing.Size(107, 21);
             this.textBox_ecuipaddress.TabIndex = 3;
             this.textBox_ecuipaddress.Text = "192.168.1.11";
             this.textBox_ecuipaddress.TextChanged += new System.EventHandler(this.textBox_ecuipaddress_TextChanged);
@@ -1321,9 +1342,9 @@
             this.button_ecuconnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_ecuconnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button_ecuconnect.Enabled = false;
-            this.button_ecuconnect.Location = new System.Drawing.Point(92, 168);
+            this.button_ecuconnect.Location = new System.Drawing.Point(92, 155);
             this.button_ecuconnect.Name = "button_ecuconnect";
-            this.button_ecuconnect.Size = new System.Drawing.Size(75, 23);
+            this.button_ecuconnect.Size = new System.Drawing.Size(75, 21);
             this.button_ecuconnect.TabIndex = 7;
             this.button_ecuconnect.Text = "Post";
             this.button_ecuconnect.UseVisualStyleBackColor = false;
@@ -1333,18 +1354,18 @@
             // 
             this.textBox_ecuport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ecuport.Location = new System.Drawing.Point(81, 47);
+            this.textBox_ecuport.Location = new System.Drawing.Point(81, 43);
             this.textBox_ecuport.Name = "textBox_ecuport";
-            this.textBox_ecuport.Size = new System.Drawing.Size(86, 20);
+            this.textBox_ecuport.Size = new System.Drawing.Size(86, 21);
             this.textBox_ecuport.TabIndex = 5;
             this.textBox_ecuport.Text = "4567";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(7, 24);
+            this.label24.Location = new System.Drawing.Point(7, 22);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(42, 13);
+            this.label24.Size = new System.Drawing.Size(41, 12);
             this.label24.TabIndex = 4;
             this.label24.Text = "ECU IP";
             // 
@@ -1359,18 +1380,18 @@
             this.groupBox_simulator.Controls.Add(this.label26);
             this.groupBox_simulator.Controls.Add(this.button_disconnect);
             this.groupBox_simulator.Controls.Add(this.label27);
-            this.groupBox_simulator.Location = new System.Drawing.Point(3, 36);
+            this.groupBox_simulator.Location = new System.Drawing.Point(3, 33);
             this.groupBox_simulator.Name = "groupBox_simulator";
-            this.groupBox_simulator.Size = new System.Drawing.Size(173, 170);
+            this.groupBox_simulator.Size = new System.Drawing.Size(173, 157);
             this.groupBox_simulator.TabIndex = 8;
             this.groupBox_simulator.TabStop = false;
             this.groupBox_simulator.Text = "Simulator";
             // 
             // button_resetselfip
             // 
-            this.button_resetselfip.Location = new System.Drawing.Point(10, 98);
+            this.button_resetselfip.Location = new System.Drawing.Point(10, 90);
             this.button_resetselfip.Name = "button_resetselfip";
-            this.button_resetselfip.Size = new System.Drawing.Size(52, 23);
+            this.button_resetselfip.Size = new System.Drawing.Size(52, 21);
             this.button_resetselfip.TabIndex = 8;
             this.button_resetselfip.Text = "Reset";
             this.button_resetselfip.UseVisualStyleBackColor = true;
@@ -1380,18 +1401,18 @@
             // 
             this.textBox_ipaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ipaddress.Location = new System.Drawing.Point(40, 20);
+            this.textBox_ipaddress.Location = new System.Drawing.Point(40, 18);
             this.textBox_ipaddress.Name = "textBox_ipaddress";
-            this.textBox_ipaddress.Size = new System.Drawing.Size(127, 20);
+            this.textBox_ipaddress.Size = new System.Drawing.Size(127, 21);
             this.textBox_ipaddress.TabIndex = 3;
             // 
             // button_connect
             // 
             this.button_connect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_connect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button_connect.Location = new System.Drawing.Point(92, 95);
+            this.button_connect.Location = new System.Drawing.Point(92, 88);
             this.button_connect.Name = "button_connect";
-            this.button_connect.Size = new System.Drawing.Size(75, 23);
+            this.button_connect.Size = new System.Drawing.Size(75, 21);
             this.button_connect.TabIndex = 7;
             this.button_connect.Text = "Connect";
             this.button_connect.UseVisualStyleBackColor = false;
@@ -1401,17 +1422,17 @@
             // 
             this.textBox_port.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_port.Location = new System.Drawing.Point(60, 57);
+            this.textBox_port.Location = new System.Drawing.Point(60, 53);
             this.textBox_port.Name = "textBox_port";
-            this.textBox_port.Size = new System.Drawing.Size(107, 20);
+            this.textBox_port.Size = new System.Drawing.Size(107, 21);
             this.textBox_port.TabIndex = 5;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(13, 22);
+            this.label26.Location = new System.Drawing.Point(13, 20);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(17, 13);
+            this.label26.Size = new System.Drawing.Size(17, 12);
             this.label26.TabIndex = 4;
             this.label26.Text = "IP";
             // 
@@ -1419,9 +1440,9 @@
             // 
             this.button_disconnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_disconnect.Enabled = false;
-            this.button_disconnect.Location = new System.Drawing.Point(92, 132);
+            this.button_disconnect.Location = new System.Drawing.Point(92, 122);
             this.button_disconnect.Name = "button_disconnect";
-            this.button_disconnect.Size = new System.Drawing.Size(75, 23);
+            this.button_disconnect.Size = new System.Drawing.Size(75, 21);
             this.button_disconnect.TabIndex = 1;
             this.button_disconnect.Text = "Disconnect";
             this.button_disconnect.UseVisualStyleBackColor = true;
@@ -1430,9 +1451,9 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(13, 60);
+            this.label27.Location = new System.Drawing.Point(13, 55);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(26, 13);
+            this.label27.Size = new System.Drawing.Size(29, 12);
             this.label27.TabIndex = 6;
             this.label27.Text = "Port";
             // 
@@ -1445,9 +1466,9 @@
             this.listView_message.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView_message.FullRowSelect = true;
             this.listView_message.GridLines = true;
-            this.listView_message.Location = new System.Drawing.Point(3, 16);
+            this.listView_message.Location = new System.Drawing.Point(3, 17);
             this.listView_message.Name = "listView_message";
-            this.listView_message.Size = new System.Drawing.Size(1364, 69);
+            this.listView_message.Size = new System.Drawing.Size(1364, 61);
             this.listView_message.TabIndex = 0;
             this.listView_message.UseCompatibleStateImageBehavior = false;
             this.listView_message.View = System.Windows.Forms.View.Details;
@@ -1468,9 +1489,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_loadallconfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button_loadallconfig.Enabled = false;
-            this.button_loadallconfig.Location = new System.Drawing.Point(18, 418);
+            this.button_loadallconfig.Location = new System.Drawing.Point(18, 385);
             this.button_loadallconfig.Name = "button_loadallconfig";
-            this.button_loadallconfig.Size = new System.Drawing.Size(158, 53);
+            this.button_loadallconfig.Size = new System.Drawing.Size(158, 33);
             this.button_loadallconfig.TabIndex = 1;
             this.button_loadallconfig.Text = "loading configuration";
             this.button_loadallconfig.UseVisualStyleBackColor = false;
@@ -1479,9 +1500,9 @@
             // Reminder
             // 
             this.Reminder.AutoSize = true;
-            this.Reminder.Location = new System.Drawing.Point(26, 428);
+            this.Reminder.Location = new System.Drawing.Point(26, 395);
             this.Reminder.Name = "Reminder";
-            this.Reminder.Size = new System.Drawing.Size(0, 13);
+            this.Reminder.Size = new System.Drawing.Size(0, 12);
             this.Reminder.TabIndex = 12;
             // 
             // button_run
@@ -1490,9 +1511,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_run.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button_run.Enabled = false;
-            this.button_run.Location = new System.Drawing.Point(18, 505);
+            this.button_run.Location = new System.Drawing.Point(15, 52);
             this.button_run.Name = "button_run";
-            this.button_run.Size = new System.Drawing.Size(158, 53);
+            this.button_run.Size = new System.Drawing.Size(158, 28);
             this.button_run.TabIndex = 13;
             this.button_run.Text = "Run";
             this.button_run.UseVisualStyleBackColor = false;
@@ -1501,9 +1522,9 @@
             // languageChangeLabel
             // 
             this.languageChangeLabel.AutoSize = true;
-            this.languageChangeLabel.Location = new System.Drawing.Point(43, 544);
+            this.languageChangeLabel.Location = new System.Drawing.Point(11, 501);
             this.languageChangeLabel.Name = "languageChangeLabel";
-            this.languageChangeLabel.Size = new System.Drawing.Size(55, 13);
+            this.languageChangeLabel.Size = new System.Drawing.Size(53, 12);
             this.languageChangeLabel.TabIndex = 14;
             this.languageChangeLabel.Text = "语言切换";
             // 
@@ -1513,18 +1534,18 @@
             this.languageChange.Items.AddRange(new object[] {
             "汉语",
             "English"});
-            this.languageChange.Location = new System.Drawing.Point(23, 560);
+            this.languageChange.Location = new System.Drawing.Point(12, 517);
             this.languageChange.Name = "languageChange";
-            this.languageChange.Size = new System.Drawing.Size(91, 21);
+            this.languageChange.Size = new System.Drawing.Size(91, 20);
             this.languageChange.TabIndex = 15;
             this.languageChange.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // checkBox_recording
             // 
             this.checkBox_recording.AutoSize = true;
-            this.checkBox_recording.Location = new System.Drawing.Point(31, 481);
+            this.checkBox_recording.Location = new System.Drawing.Point(16, 84);
             this.checkBox_recording.Name = "checkBox_recording";
-            this.checkBox_recording.Size = new System.Drawing.Size(75, 17);
+            this.checkBox_recording.Size = new System.Drawing.Size(78, 16);
             this.checkBox_recording.TabIndex = 16;
             this.checkBox_recording.Text = "Recording";
             this.checkBox_recording.UseVisualStyleBackColor = true;
@@ -1533,9 +1554,9 @@
             // 
             this.panel2.Controls.Add(this.splitContainer_main);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 24);
+            this.panel2.Location = new System.Drawing.Point(0, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 725);
+            this.panel2.Size = new System.Drawing.Size(1370, 666);
             this.panel2.TabIndex = 17;
             // 
             // splitContainer_main
@@ -1552,8 +1573,8 @@
             // splitContainer_main.Panel2
             // 
             this.splitContainer_main.Panel2.Controls.Add(this.groupBox_systemmessagebox);
-            this.splitContainer_main.Size = new System.Drawing.Size(1370, 725);
-            this.splitContainer_main.SplitterDistance = 633;
+            this.splitContainer_main.Size = new System.Drawing.Size(1370, 666);
+            this.splitContainer_main.SplitterDistance = 581;
             this.splitContainer_main.TabIndex = 0;
             // 
             // splitContainer_connection
@@ -1566,27 +1587,25 @@
             // 
             this.splitContainer_connection.Panel1.AutoScroll = true;
             this.splitContainer_connection.Panel1.BackColor = System.Drawing.Color.Gray;
+            this.splitContainer_connection.Panel1.Controls.Add(this.groupBox5);
             this.splitContainer_connection.Panel1.Controls.Add(this.checkBox_saveip);
-            this.splitContainer_connection.Panel1.Controls.Add(this.button_runpause);
             this.splitContainer_connection.Panel1.Controls.Add(this.groupBox_ecu);
-            this.splitContainer_connection.Panel1.Controls.Add(this.button_run);
-            this.splitContainer_connection.Panel1.Controls.Add(this.checkBox_recording);
             this.splitContainer_connection.Panel1.Controls.Add(this.groupBox_simulator);
             this.splitContainer_connection.Panel1.Controls.Add(this.button_loadallconfig);
             // 
             // splitContainer_connection.Panel2
             // 
             this.splitContainer_connection.Panel2.Controls.Add(this.splitContainer_path);
-            this.splitContainer_connection.Size = new System.Drawing.Size(1370, 633);
+            this.splitContainer_connection.Size = new System.Drawing.Size(1370, 581);
             this.splitContainer_connection.SplitterDistance = 185;
             this.splitContainer_connection.TabIndex = 2;
             // 
             // checkBox_saveip
             // 
             this.checkBox_saveip.AutoSize = true;
-            this.checkBox_saveip.Location = new System.Drawing.Point(3, 12);
+            this.checkBox_saveip.Location = new System.Drawing.Point(3, 11);
             this.checkBox_saveip.Name = "checkBox_saveip";
-            this.checkBox_saveip.Size = new System.Drawing.Size(115, 17);
+            this.checkBox_saveip.Size = new System.Drawing.Size(126, 16);
             this.checkBox_saveip.TabIndex = 18;
             this.checkBox_saveip.Text = "Save Network Info";
             this.checkBox_saveip.UseVisualStyleBackColor = true;
@@ -1595,9 +1614,9 @@
             // 
             this.button_runpause.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_runpause.Location = new System.Drawing.Point(19, 579);
+            this.button_runpause.Location = new System.Drawing.Point(15, 109);
             this.button_runpause.Name = "button_runpause";
-            this.button_runpause.Size = new System.Drawing.Size(157, 23);
+            this.button_runpause.Size = new System.Drawing.Size(157, 21);
             this.button_runpause.TabIndex = 17;
             this.button_runpause.Text = "Pause";
             this.button_runpause.UseVisualStyleBackColor = true;
@@ -1630,7 +1649,7 @@
             // splitContainer_path.Panel2
             // 
             this.splitContainer_path.Panel2.Controls.Add(this.splitContainer_features);
-            this.splitContainer_path.Size = new System.Drawing.Size(1181, 633);
+            this.splitContainer_path.Size = new System.Drawing.Size(1181, 581);
             this.splitContainer_path.SplitterDistance = 201;
             this.splitContainer_path.TabIndex = 1;
             // 
@@ -1638,31 +1657,39 @@
             // 
             this.groupBox_terrain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_terrain.Controls.Add(this.comboBox1);
-            this.groupBox_terrain.Location = new System.Drawing.Point(8, 11);
+            this.groupBox_terrain.Controls.Add(this.comboBox_terraintype);
+            this.groupBox_terrain.Location = new System.Drawing.Point(8, 10);
             this.groupBox_terrain.Name = "groupBox_terrain";
-            this.groupBox_terrain.Size = new System.Drawing.Size(177, 79);
+            this.groupBox_terrain.Size = new System.Drawing.Size(177, 73);
             this.groupBox_terrain.TabIndex = 0;
             this.groupBox_terrain.TabStop = false;
             this.groupBox_terrain.Text = "Terrain";
             // 
-            // comboBox1
+            // comboBox_terraintype
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox_terraintype.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 21);
-            this.comboBox1.TabIndex = 17;
+            this.comboBox_terraintype.FormattingEnabled = true;
+            this.comboBox_terraintype.Items.AddRange(new object[] {
+            "Regular",
+            "City Local",
+            "Freeway High Speed",
+            "Village",
+            "Mountain",
+            "Residential Compus"});
+            this.comboBox_terraintype.Location = new System.Drawing.Point(5, 25);
+            this.comboBox_terraintype.Name = "comboBox_terraintype";
+            this.comboBox_terraintype.Size = new System.Drawing.Size(165, 20);
+            this.comboBox_terraintype.TabIndex = 17;
+            this.comboBox_terraintype.SelectedIndexChanged += new System.EventHandler(this.comboBox_terraintype_SelectedIndexChanged);
             // 
             // button_genwaypoints
             // 
             this.button_genwaypoints.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_genwaypoints.Location = new System.Drawing.Point(9, 575);
+            this.button_genwaypoints.Location = new System.Drawing.Point(9, 531);
             this.button_genwaypoints.Name = "button_genwaypoints";
-            this.button_genwaypoints.Size = new System.Drawing.Size(177, 25);
+            this.button_genwaypoints.Size = new System.Drawing.Size(177, 23);
             this.button_genwaypoints.TabIndex = 16;
             this.button_genwaypoints.Text = "Generate Path";
             this.button_genwaypoints.UseVisualStyleBackColor = true;
@@ -1670,9 +1697,9 @@
             // button_pathinfoview
             // 
             this.button_pathinfoview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_pathinfoview.Location = new System.Drawing.Point(110, 537);
+            this.button_pathinfoview.Location = new System.Drawing.Point(110, 496);
             this.button_pathinfoview.Name = "button_pathinfoview";
-            this.button_pathinfoview.Size = new System.Drawing.Size(75, 25);
+            this.button_pathinfoview.Size = new System.Drawing.Size(75, 23);
             this.button_pathinfoview.TabIndex = 15;
             this.button_pathinfoview.Text = "View";
             this.button_pathinfoview.UseVisualStyleBackColor = true;
@@ -1680,9 +1707,9 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(8, 485);
+            this.label36.Location = new System.Drawing.Point(8, 448);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(50, 13);
+            this.label36.Size = new System.Drawing.Size(59, 12);
             this.label36.TabIndex = 14;
             this.label36.Text = "Path Info";
             // 
@@ -1690,9 +1717,9 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(8, 505);
+            this.textBox1.Location = new System.Drawing.Point(8, 466);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
+            this.textBox1.Size = new System.Drawing.Size(177, 21);
             this.textBox1.TabIndex = 13;
             // 
             // splitContainer_features
@@ -1714,7 +1741,7 @@
             this.splitContainer_features.Panel2.Controls.Add(this.groupBox_sendrequest);
             this.splitContainer_features.Panel2.Controls.Add(this.languageChangeLabel);
             this.splitContainer_features.Panel2.Controls.Add(this.languageChange);
-            this.splitContainer_features.Size = new System.Drawing.Size(974, 631);
+            this.splitContainer_features.Size = new System.Drawing.Size(974, 579);
             this.splitContainer_features.SplitterDistance = 851;
             this.splitContainer_features.TabIndex = 0;
             // 
@@ -1724,14 +1751,14 @@
             this.groupBox_center.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_center.Location = new System.Drawing.Point(0, 0);
             this.groupBox_center.Name = "groupBox_center";
-            this.groupBox_center.Size = new System.Drawing.Size(851, 631);
+            this.groupBox_center.Size = new System.Drawing.Size(851, 579);
             this.groupBox_center.TabIndex = 1;
             this.groupBox_center.TabStop = false;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 16);
+            this.splitContainer2.Location = new System.Drawing.Point(3, 17);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1742,8 +1769,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer_sensors);
-            this.splitContainer2.Size = new System.Drawing.Size(845, 612);
-            this.splitContainer2.SplitterDistance = 150;
+            this.splitContainer2.Size = new System.Drawing.Size(845, 559);
+            this.splitContainer2.SplitterDistance = 137;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -1763,7 +1790,7 @@
             this.splitContainer3.Panel2.AutoScroll = true;
             this.splitContainer3.Panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.splitContainer3.Panel2.Controls.Add(this.weatherGroup);
-            this.splitContainer3.Size = new System.Drawing.Size(845, 150);
+            this.splitContainer3.Size = new System.Drawing.Size(845, 137);
             this.splitContainer3.SplitterDistance = 367;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -1782,7 +1809,7 @@
             // 
             this.splitContainer_sensors.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer_sensors.Panel2.Controls.Add(this.splitContainer_sensor_3_4);
-            this.splitContainer_sensors.Size = new System.Drawing.Size(845, 458);
+            this.splitContainer_sensors.Size = new System.Drawing.Size(845, 418);
             this.splitContainer_sensors.SplitterDistance = 539;
             this.splitContainer_sensors.TabIndex = 0;
             // 
@@ -1792,7 +1819,7 @@
             this.groupBox_sensors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_sensors.Location = new System.Drawing.Point(0, 0);
             this.groupBox_sensors.Name = "groupBox_sensors";
-            this.groupBox_sensors.Size = new System.Drawing.Size(539, 458);
+            this.groupBox_sensors.Size = new System.Drawing.Size(539, 418);
             this.groupBox_sensors.TabIndex = 1;
             this.groupBox_sensors.TabStop = false;
             this.groupBox_sensors.Text = "Sensors Config";
@@ -1813,17 +1840,17 @@
             this.tabControl_sensors.Controls.Add(this.tabPage8);
             this.tabControl_sensors.Controls.Add(this.tabPage13);
             this.tabControl_sensors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl_sensors.Location = new System.Drawing.Point(3, 16);
+            this.tabControl_sensors.Location = new System.Drawing.Point(3, 17);
             this.tabControl_sensors.Name = "tabControl_sensors";
             this.tabControl_sensors.SelectedIndex = 0;
-            this.tabControl_sensors.Size = new System.Drawing.Size(533, 439);
+            this.tabControl_sensors.Size = new System.Drawing.Size(533, 398);
             this.tabControl_sensors.TabIndex = 0;
             // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(525, 413);
+            this.tabPage5.Size = new System.Drawing.Size(525, 372);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Camera";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1834,7 +1861,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(525, 407);
+            this.tabPage1.Size = new System.Drawing.Size(525, 372);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lidar";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1848,7 +1875,7 @@
             this.groupBox_sensor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_sensor1.Location = new System.Drawing.Point(3, 3);
             this.groupBox_sensor1.Name = "groupBox_sensor1";
-            this.groupBox_sensor1.Size = new System.Drawing.Size(519, 401);
+            this.groupBox_sensor1.Size = new System.Drawing.Size(519, 366);
             this.groupBox_sensor1.TabIndex = 1;
             this.groupBox_sensor1.TabStop = false;
             // 
@@ -1869,9 +1896,9 @@
             this.lidarGroup.Controls.Add(this.label12);
             this.lidarGroup.Controls.Add(this.lidar_value_text);
             this.lidarGroup.Controls.Add(this.label16);
-            this.lidarGroup.Location = new System.Drawing.Point(6, 157);
+            this.lidarGroup.Location = new System.Drawing.Point(6, 145);
             this.lidarGroup.Name = "lidarGroup";
-            this.lidarGroup.Size = new System.Drawing.Size(499, 289);
+            this.lidarGroup.Size = new System.Drawing.Size(499, 267);
             this.lidarGroup.TabIndex = 4;
             this.lidarGroup.TabStop = false;
             this.lidarGroup.Text = "设备属性设置";
@@ -1885,17 +1912,17 @@
             "5HZ",
             "10HZ",
             "20HZ"});
-            this.lidar_frequency.Location = new System.Drawing.Point(65, 105);
+            this.lidar_frequency.Location = new System.Drawing.Point(65, 97);
             this.lidar_frequency.Name = "lidar_frequency";
-            this.lidar_frequency.Size = new System.Drawing.Size(421, 21);
+            this.lidar_frequency.Size = new System.Drawing.Size(421, 20);
             this.lidar_frequency.TabIndex = 39;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 108);
+            this.label17.Location = new System.Drawing.Point(18, 100);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(43, 13);
+            this.label17.Size = new System.Drawing.Size(41, 12);
             this.label17.TabIndex = 38;
             this.label17.Text = "频率：";
             // 
@@ -1903,9 +1930,9 @@
             // 
             this.lidar_accuracy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lidar_accuracy.Location = new System.Drawing.Point(63, 146);
+            this.lidar_accuracy.Location = new System.Drawing.Point(63, 135);
             this.lidar_accuracy.Name = "lidar_accuracy";
-            this.lidar_accuracy.Size = new System.Drawing.Size(423, 20);
+            this.lidar_accuracy.Size = new System.Drawing.Size(423, 21);
             this.lidar_accuracy.TabIndex = 37;
             this.lidar_accuracy.Text = "+/-3";
             // 
@@ -1913,9 +1940,9 @@
             // 
             this.lidar_horizontal_range.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lidar_horizontal_range.Location = new System.Drawing.Point(107, 233);
+            this.lidar_horizontal_range.Location = new System.Drawing.Point(107, 215);
             this.lidar_horizontal_range.Name = "lidar_horizontal_range";
-            this.lidar_horizontal_range.Size = new System.Drawing.Size(379, 20);
+            this.lidar_horizontal_range.Size = new System.Drawing.Size(379, 21);
             this.lidar_horizontal_range.TabIndex = 35;
             this.lidar_horizontal_range.Text = "0~360";
             // 
@@ -1923,27 +1950,27 @@
             // 
             this.lidar_vertical_range.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lidar_vertical_range.Location = new System.Drawing.Point(107, 192);
+            this.lidar_vertical_range.Location = new System.Drawing.Point(107, 177);
             this.lidar_vertical_range.Name = "lidar_vertical_range";
-            this.lidar_vertical_range.Size = new System.Drawing.Size(379, 20);
+            this.lidar_vertical_range.Size = new System.Drawing.Size(379, 21);
             this.lidar_vertical_range.TabIndex = 34;
             this.lidar_vertical_range.Text = "+15~-15";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(13, 37);
+            this.label25.Location = new System.Drawing.Point(13, 34);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(55, 13);
+            this.label25.Size = new System.Drawing.Size(53, 12);
             this.label25.TabIndex = 22;
             this.label25.Text = "射线范围";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(18, 150);
+            this.label22.Location = new System.Drawing.Point(18, 138);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(43, 13);
+            this.label22.Size = new System.Drawing.Size(41, 12);
             this.label22.TabIndex = 17;
             this.label22.Text = "精度：";
             // 
@@ -1952,7 +1979,7 @@
             this.lidar_value.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lidar_value.LargeChange = 1;
-            this.lidar_value.Location = new System.Drawing.Point(83, 37);
+            this.lidar_value.Location = new System.Drawing.Point(83, 34);
             this.lidar_value.Name = "lidar_value";
             this.lidar_value.Size = new System.Drawing.Size(403, 20);
             this.lidar_value.TabIndex = 0;
@@ -1961,9 +1988,9 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(16, 236);
+            this.label30.Location = new System.Drawing.Point(16, 218);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(91, 13);
+            this.label30.Size = new System.Drawing.Size(89, 12);
             this.label30.TabIndex = 9;
             this.label30.Text = "水平视野范围：";
             // 
@@ -1971,34 +1998,34 @@
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(451, 63);
+            this.label13.Location = new System.Drawing.Point(451, 58);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.Size = new System.Drawing.Size(35, 12);
             this.label13.TabIndex = 2;
             this.label13.Text = "100米";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(82, 63);
+            this.label12.Location = new System.Drawing.Point(82, 58);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 13);
+            this.label12.Size = new System.Drawing.Size(23, 12);
             this.label12.TabIndex = 1;
             this.label12.Text = "1米";
             // 
             // lidar_value_text
             // 
-            this.lidar_value_text.Location = new System.Drawing.Point(22, 60);
+            this.lidar_value_text.Location = new System.Drawing.Point(22, 55);
             this.lidar_value_text.Name = "lidar_value_text";
-            this.lidar_value_text.Size = new System.Drawing.Size(37, 20);
+            this.lidar_value_text.Size = new System.Drawing.Size(37, 21);
             this.lidar_value_text.TabIndex = 8;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 195);
+            this.label16.Location = new System.Drawing.Point(16, 180);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(91, 13);
+            this.label16.Size = new System.Drawing.Size(89, 12);
             this.label16.TabIndex = 5;
             this.label16.Text = "垂直视野范围：";
             // 
@@ -2007,6 +2034,7 @@
             this.lidar_equipment_listBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lidar_equipment_listBox.FormattingEnabled = true;
+            this.lidar_equipment_listBox.ItemHeight = 12;
             this.lidar_equipment_listBox.Items.AddRange(new object[] {
             "Velodyne HDL-32e",
             "Velodyne VLP-16",
@@ -2015,9 +2043,9 @@
             "SICK LMS511",
             "IBEO 8L Single",
             "NULL"});
-            this.lidar_equipment_listBox.Location = new System.Drawing.Point(6, 78);
+            this.lidar_equipment_listBox.Location = new System.Drawing.Point(6, 72);
             this.lidar_equipment_listBox.Name = "lidar_equipment_listBox";
-            this.lidar_equipment_listBox.Size = new System.Drawing.Size(498, 69);
+            this.lidar_equipment_listBox.Size = new System.Drawing.Size(498, 64);
             this.lidar_equipment_listBox.TabIndex = 15;
             this.lidar_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -2025,17 +2053,17 @@
             // 
             this.lidar_equipment_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lidar_equipment_textBox.Location = new System.Drawing.Point(6, 37);
+            this.lidar_equipment_textBox.Location = new System.Drawing.Point(6, 34);
             this.lidar_equipment_textBox.Name = "lidar_equipment_textBox";
-            this.lidar_equipment_textBox.Size = new System.Drawing.Size(498, 20);
+            this.lidar_equipment_textBox.Size = new System.Drawing.Size(498, 21);
             this.lidar_equipment_textBox.TabIndex = 16;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(10, 16);
+            this.label32.Location = new System.Drawing.Point(10, 15);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(55, 13);
+            this.label32.Size = new System.Drawing.Size(53, 12);
             this.label32.TabIndex = 12;
             this.label32.Text = "设备选择";
             // 
@@ -2045,7 +2073,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(525, 407);
+            this.tabPage2.Size = new System.Drawing.Size(525, 372);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Radar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2059,7 +2087,7 @@
             this.groupBox_sensor2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_sensor2.Location = new System.Drawing.Point(3, 3);
             this.groupBox_sensor2.Name = "groupBox_sensor2";
-            this.groupBox_sensor2.Size = new System.Drawing.Size(519, 401);
+            this.groupBox_sensor2.Size = new System.Drawing.Size(519, 366);
             this.groupBox_sensor2.TabIndex = 1;
             this.groupBox_sensor2.TabStop = false;
             // 
@@ -2078,9 +2106,9 @@
             this.radarGroup.Controls.Add(this.label49);
             this.radarGroup.Controls.Add(this.label50);
             this.radarGroup.Controls.Add(this.radar_value_text);
-            this.radarGroup.Location = new System.Drawing.Point(6, 157);
+            this.radarGroup.Location = new System.Drawing.Point(6, 145);
             this.radarGroup.Name = "radarGroup";
-            this.radarGroup.Size = new System.Drawing.Size(502, 272);
+            this.radarGroup.Size = new System.Drawing.Size(502, 251);
             this.radarGroup.TabIndex = 14;
             this.radarGroup.TabStop = false;
             this.radarGroup.Text = "设备属性设置";
@@ -2089,17 +2117,17 @@
             // 
             this.radar_range.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radar_range.Location = new System.Drawing.Point(112, 104);
+            this.radar_range.Location = new System.Drawing.Point(112, 96);
             this.radar_range.Name = "radar_range";
-            this.radar_range.Size = new System.Drawing.Size(380, 20);
+            this.radar_range.Size = new System.Drawing.Size(380, 21);
             this.radar_range.TabIndex = 28;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 108);
+            this.label14.Location = new System.Drawing.Point(17, 100);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 13);
+            this.label14.Size = new System.Drawing.Size(89, 12);
             this.label14.TabIndex = 27;
             this.label14.Text = "上下夹角范围：";
             // 
@@ -2107,17 +2135,17 @@
             // 
             this.radar_speed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radar_speed.Location = new System.Drawing.Point(62, 150);
+            this.radar_speed.Location = new System.Drawing.Point(62, 138);
             this.radar_speed.Name = "radar_speed";
-            this.radar_speed.Size = new System.Drawing.Size(430, 20);
+            this.radar_speed.Size = new System.Drawing.Size(430, 21);
             this.radar_speed.TabIndex = 26;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(14, 156);
+            this.label19.Location = new System.Drawing.Point(14, 144);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(43, 13);
+            this.label19.Size = new System.Drawing.Size(41, 12);
             this.label19.TabIndex = 25;
             this.label19.Text = "频率：";
             // 
@@ -2125,26 +2153,26 @@
             // 
             this.radar_accuracy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radar_accuracy.Location = new System.Drawing.Point(62, 189);
+            this.radar_accuracy.Location = new System.Drawing.Point(62, 174);
             this.radar_accuracy.Name = "radar_accuracy";
-            this.radar_accuracy.Size = new System.Drawing.Size(430, 20);
+            this.radar_accuracy.Size = new System.Drawing.Size(430, 21);
             this.radar_accuracy.TabIndex = 24;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 191);
+            this.label18.Location = new System.Drawing.Point(15, 176);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 13);
+            this.label18.Size = new System.Drawing.Size(41, 12);
             this.label18.TabIndex = 23;
             this.label18.Text = "误差：";
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(17, 37);
+            this.label44.Location = new System.Drawing.Point(17, 34);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(55, 13);
+            this.label44.Size = new System.Drawing.Size(53, 12);
             this.label44.TabIndex = 22;
             this.label44.Text = "射线范围";
             // 
@@ -2153,7 +2181,7 @@
             this.radar_value.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radar_value.LargeChange = 1;
-            this.radar_value.Location = new System.Drawing.Point(97, 28);
+            this.radar_value.Location = new System.Drawing.Point(97, 26);
             this.radar_value.Name = "radar_value";
             this.radar_value.Size = new System.Drawing.Size(395, 20);
             this.radar_value.TabIndex = 0;
@@ -2162,26 +2190,26 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(216, 63);
+            this.label49.Location = new System.Drawing.Point(216, 58);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(37, 13);
+            this.label49.Size = new System.Drawing.Size(35, 12);
             this.label49.TabIndex = 2;
             this.label49.Text = "100米";
             // 
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(95, 63);
+            this.label50.Location = new System.Drawing.Point(95, 58);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(31, 13);
+            this.label50.Size = new System.Drawing.Size(29, 12);
             this.label50.TabIndex = 1;
             this.label50.Text = "10米";
             // 
             // radar_value_text
             // 
-            this.radar_value_text.Location = new System.Drawing.Point(26, 60);
+            this.radar_value_text.Location = new System.Drawing.Point(26, 55);
             this.radar_value_text.Name = "radar_value_text";
-            this.radar_value_text.Size = new System.Drawing.Size(38, 20);
+            this.radar_value_text.Size = new System.Drawing.Size(38, 21);
             this.radar_value_text.TabIndex = 8;
             // 
             // radar_equipment_listBox
@@ -2189,24 +2217,25 @@
             this.radar_equipment_listBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radar_equipment_listBox.FormattingEnabled = true;
+            this.radar_equipment_listBox.ItemHeight = 12;
             this.radar_equipment_listBox.Items.AddRange(new object[] {
             "Vehicular",
             "Delphi RADAR",
             "Accessories",
             "Smartmicro RADAR",
             "NULL"});
-            this.radar_equipment_listBox.Location = new System.Drawing.Point(6, 78);
+            this.radar_equipment_listBox.Location = new System.Drawing.Point(6, 72);
             this.radar_equipment_listBox.Name = "radar_equipment_listBox";
-            this.radar_equipment_listBox.Size = new System.Drawing.Size(502, 56);
+            this.radar_equipment_listBox.Size = new System.Drawing.Size(502, 52);
             this.radar_equipment_listBox.TabIndex = 22;
             this.radar_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 16);
+            this.label15.Location = new System.Drawing.Point(9, 15);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 13);
+            this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 17;
             this.label15.Text = "设备选择";
             // 
@@ -2214,9 +2243,9 @@
             // 
             this.radar_equipment_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radar_equipment_textBox.Location = new System.Drawing.Point(6, 37);
+            this.radar_equipment_textBox.Location = new System.Drawing.Point(6, 34);
             this.radar_equipment_textBox.Name = "radar_equipment_textBox";
-            this.radar_equipment_textBox.Size = new System.Drawing.Size(502, 20);
+            this.radar_equipment_textBox.Size = new System.Drawing.Size(502, 21);
             this.radar_equipment_textBox.TabIndex = 21;
             // 
             // tabPage3
@@ -2224,7 +2253,7 @@
             this.tabPage3.Controls.Add(this.groupBox_sensorimu);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(525, 407);
+            this.tabPage3.Size = new System.Drawing.Size(525, 372);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "IMU";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2238,7 +2267,7 @@
             this.groupBox_sensorimu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_sensorimu.Location = new System.Drawing.Point(0, 0);
             this.groupBox_sensorimu.Name = "groupBox_sensorimu";
-            this.groupBox_sensorimu.Size = new System.Drawing.Size(525, 407);
+            this.groupBox_sensorimu.Size = new System.Drawing.Size(525, 372);
             this.groupBox_sensorimu.TabIndex = 2;
             this.groupBox_sensorimu.TabStop = false;
             // 
@@ -2256,136 +2285,137 @@
             this.imuGroup.Controls.Add(this.label23);
             this.imuGroup.Controls.Add(this.imu_pitch_angle);
             this.imuGroup.Controls.Add(this.label57);
-            this.imuGroup.Location = new System.Drawing.Point(6, 157);
+            this.imuGroup.Location = new System.Drawing.Point(6, 145);
             this.imuGroup.Name = "imuGroup";
-            this.imuGroup.Size = new System.Drawing.Size(305, 380);
+            this.imuGroup.Size = new System.Drawing.Size(305, 351);
             this.imuGroup.TabIndex = 23;
             this.imuGroup.TabStop = false;
             this.imuGroup.Text = "设备属性设置";
             // 
             // imu_three_axis_geomagnetic
             // 
-            this.imu_three_axis_geomagnetic.Location = new System.Drawing.Point(154, 254);
+            this.imu_three_axis_geomagnetic.Location = new System.Drawing.Point(154, 234);
             this.imu_three_axis_geomagnetic.Name = "imu_three_axis_geomagnetic";
-            this.imu_three_axis_geomagnetic.Size = new System.Drawing.Size(68, 20);
+            this.imu_three_axis_geomagnetic.Size = new System.Drawing.Size(68, 21);
             this.imu_three_axis_geomagnetic.TabIndex = 19;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(157, 217);
+            this.label31.Location = new System.Drawing.Point(157, 200);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(67, 13);
+            this.label31.Size = new System.Drawing.Size(65, 12);
             this.label31.TabIndex = 18;
             this.label31.Text = "三轴地磁：";
             // 
             // imu_three_axis_angular_velocity
             // 
-            this.imu_three_axis_angular_velocity.Location = new System.Drawing.Point(33, 254);
+            this.imu_three_axis_angular_velocity.Location = new System.Drawing.Point(33, 234);
             this.imu_three_axis_angular_velocity.Name = "imu_three_axis_angular_velocity";
-            this.imu_three_axis_angular_velocity.Size = new System.Drawing.Size(57, 20);
+            this.imu_three_axis_angular_velocity.Size = new System.Drawing.Size(57, 21);
             this.imu_three_axis_angular_velocity.TabIndex = 17;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(31, 217);
+            this.label28.Location = new System.Drawing.Point(31, 200);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(79, 13);
+            this.label28.Size = new System.Drawing.Size(77, 12);
             this.label28.TabIndex = 16;
             this.label28.Text = "三轴角速度：";
             // 
             // imu_heading_angle
             // 
-            this.imu_heading_angle.Location = new System.Drawing.Point(33, 171);
+            this.imu_heading_angle.Location = new System.Drawing.Point(33, 158);
             this.imu_heading_angle.Name = "imu_heading_angle";
-            this.imu_heading_angle.Size = new System.Drawing.Size(57, 20);
+            this.imu_heading_angle.Size = new System.Drawing.Size(57, 21);
             this.imu_heading_angle.TabIndex = 15;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(31, 134);
+            this.label37.Location = new System.Drawing.Point(31, 124);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(55, 13);
+            this.label37.Size = new System.Drawing.Size(53, 12);
             this.label37.TabIndex = 14;
             this.label37.Text = "航向角：";
             // 
             // imu_three_axis_acceleration
             // 
-            this.imu_three_axis_acceleration.Location = new System.Drawing.Point(154, 171);
+            this.imu_three_axis_acceleration.Location = new System.Drawing.Point(154, 158);
             this.imu_three_axis_acceleration.Name = "imu_three_axis_acceleration";
-            this.imu_three_axis_acceleration.Size = new System.Drawing.Size(68, 20);
+            this.imu_three_axis_acceleration.Size = new System.Drawing.Size(68, 21);
             this.imu_three_axis_acceleration.TabIndex = 9;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(150, 134);
+            this.label29.Location = new System.Drawing.Point(150, 124);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(79, 13);
+            this.label29.Size = new System.Drawing.Size(77, 12);
             this.label29.TabIndex = 8;
             this.label29.Text = "三轴加速度：";
             // 
             // imu_roll_angle
             // 
-            this.imu_roll_angle.Location = new System.Drawing.Point(33, 86);
+            this.imu_roll_angle.Location = new System.Drawing.Point(33, 79);
             this.imu_roll_angle.Name = "imu_roll_angle";
-            this.imu_roll_angle.Size = new System.Drawing.Size(57, 20);
+            this.imu_roll_angle.Size = new System.Drawing.Size(57, 21);
             this.imu_roll_angle.TabIndex = 5;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(31, 55);
+            this.label23.Location = new System.Drawing.Point(31, 51);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(55, 13);
+            this.label23.Size = new System.Drawing.Size(53, 12);
             this.label23.TabIndex = 4;
             this.label23.Text = "横滚角：";
             // 
             // imu_pitch_angle
             // 
-            this.imu_pitch_angle.Location = new System.Drawing.Point(152, 86);
+            this.imu_pitch_angle.Location = new System.Drawing.Point(152, 79);
             this.imu_pitch_angle.Name = "imu_pitch_angle";
-            this.imu_pitch_angle.Size = new System.Drawing.Size(68, 20);
+            this.imu_pitch_angle.Size = new System.Drawing.Size(68, 21);
             this.imu_pitch_angle.TabIndex = 3;
             // 
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(157, 55);
+            this.label57.Location = new System.Drawing.Point(157, 51);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(55, 13);
+            this.label57.Size = new System.Drawing.Size(53, 12);
             this.label57.TabIndex = 2;
             this.label57.Text = "俯仰角：";
             // 
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(14, 16);
+            this.label56.Location = new System.Drawing.Point(14, 15);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(55, 13);
+            this.label56.Size = new System.Drawing.Size(53, 12);
             this.label56.TabIndex = 21;
             this.label56.Text = "设备选择";
             // 
             // imu_equipment_textBox
             // 
-            this.imu_equipment_textBox.Location = new System.Drawing.Point(6, 37);
+            this.imu_equipment_textBox.Location = new System.Drawing.Point(6, 34);
             this.imu_equipment_textBox.Name = "imu_equipment_textBox";
-            this.imu_equipment_textBox.Size = new System.Drawing.Size(172, 20);
+            this.imu_equipment_textBox.Size = new System.Drawing.Size(172, 21);
             this.imu_equipment_textBox.TabIndex = 25;
             // 
             // imu_equipment_listBox
             // 
             this.imu_equipment_listBox.FormattingEnabled = true;
+            this.imu_equipment_listBox.ItemHeight = 12;
             this.imu_equipment_listBox.Items.AddRange(new object[] {
             "Memsic_VG440",
             "Xsens_MTi_300",
             "MicroStrain_3DM_GX5_15",
             "NULL"});
-            this.imu_equipment_listBox.Location = new System.Drawing.Point(6, 78);
+            this.imu_equipment_listBox.Location = new System.Drawing.Point(6, 72);
             this.imu_equipment_listBox.Name = "imu_equipment_listBox";
-            this.imu_equipment_listBox.Size = new System.Drawing.Size(172, 69);
+            this.imu_equipment_listBox.Size = new System.Drawing.Size(172, 64);
             this.imu_equipment_listBox.TabIndex = 26;
             this.imu_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
@@ -2394,7 +2424,7 @@
             this.tabPage4.Controls.Add(this.groupBox_sensor4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(525, 407);
+            this.tabPage4.Size = new System.Drawing.Size(525, 372);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "GPS";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2408,7 +2438,7 @@
             this.groupBox_sensor4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_sensor4.Location = new System.Drawing.Point(0, 0);
             this.groupBox_sensor4.Name = "groupBox_sensor4";
-            this.groupBox_sensor4.Size = new System.Drawing.Size(525, 407);
+            this.groupBox_sensor4.Size = new System.Drawing.Size(525, 372);
             this.groupBox_sensor4.TabIndex = 1;
             this.groupBox_sensor4.TabStop = false;
             // 
@@ -2420,96 +2450,97 @@
             this.gpsGroup.Controls.Add(this.label38);
             this.gpsGroup.Controls.Add(this.gps_horizontal_positioning_accuracy);
             this.gpsGroup.Controls.Add(this.label54);
-            this.gpsGroup.Location = new System.Drawing.Point(9, 157);
+            this.gpsGroup.Location = new System.Drawing.Point(9, 145);
             this.gpsGroup.Name = "gpsGroup";
-            this.gpsGroup.Size = new System.Drawing.Size(261, 286);
+            this.gpsGroup.Size = new System.Drawing.Size(261, 264);
             this.gpsGroup.TabIndex = 23;
             this.gpsGroup.TabStop = false;
             this.gpsGroup.Text = "设备属性设置";
             // 
             // gps_time_precision
             // 
-            this.gps_time_precision.Location = new System.Drawing.Point(166, 83);
+            this.gps_time_precision.Location = new System.Drawing.Point(166, 77);
             this.gps_time_precision.Name = "gps_time_precision";
-            this.gps_time_precision.Size = new System.Drawing.Size(63, 20);
+            this.gps_time_precision.Size = new System.Drawing.Size(63, 21);
             this.gps_time_precision.TabIndex = 5;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(164, 51);
+            this.label39.Location = new System.Drawing.Point(164, 47);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(67, 13);
+            this.label39.Size = new System.Drawing.Size(65, 12);
             this.label39.TabIndex = 4;
             this.label39.Text = "时间精度：";
             // 
             // gps_velocity_accuracy
             // 
-            this.gps_velocity_accuracy.Location = new System.Drawing.Point(38, 199);
+            this.gps_velocity_accuracy.Location = new System.Drawing.Point(38, 184);
             this.gps_velocity_accuracy.Name = "gps_velocity_accuracy";
-            this.gps_velocity_accuracy.Size = new System.Drawing.Size(68, 20);
+            this.gps_velocity_accuracy.Size = new System.Drawing.Size(68, 21);
             this.gps_velocity_accuracy.TabIndex = 3;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(36, 169);
+            this.label38.Location = new System.Drawing.Point(36, 156);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(67, 13);
+            this.label38.Size = new System.Drawing.Size(65, 12);
             this.label38.TabIndex = 2;
             this.label38.Text = "速度精度：";
             // 
             // gps_horizontal_positioning_accuracy
             // 
-            this.gps_horizontal_positioning_accuracy.Location = new System.Drawing.Point(38, 83);
+            this.gps_horizontal_positioning_accuracy.Location = new System.Drawing.Point(38, 77);
             this.gps_horizontal_positioning_accuracy.Name = "gps_horizontal_positioning_accuracy";
-            this.gps_horizontal_positioning_accuracy.Size = new System.Drawing.Size(63, 20);
+            this.gps_horizontal_positioning_accuracy.Size = new System.Drawing.Size(63, 21);
             this.gps_horizontal_positioning_accuracy.TabIndex = 1;
             // 
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(36, 51);
+            this.label54.Location = new System.Drawing.Point(36, 47);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(91, 13);
+            this.label54.Size = new System.Drawing.Size(89, 12);
             this.label54.TabIndex = 0;
             this.label54.Text = "水平定位精度：";
             // 
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(6, 16);
+            this.label53.Location = new System.Drawing.Point(6, 15);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(55, 13);
+            this.label53.Size = new System.Drawing.Size(53, 12);
             this.label53.TabIndex = 21;
             this.label53.Text = "设备选择";
             // 
             // gps_equipment_listBox
             // 
             this.gps_equipment_listBox.FormattingEnabled = true;
+            this.gps_equipment_listBox.ItemHeight = 12;
             this.gps_equipment_listBox.Items.AddRange(new object[] {
             "Javad_Delta_3(TTY1)",
             "Garmin_GPS_18x_LVC",
             "Serial_GNSS",
             "NULL"});
-            this.gps_equipment_listBox.Location = new System.Drawing.Point(9, 78);
+            this.gps_equipment_listBox.Location = new System.Drawing.Point(9, 72);
             this.gps_equipment_listBox.Name = "gps_equipment_listBox";
-            this.gps_equipment_listBox.Size = new System.Drawing.Size(182, 56);
+            this.gps_equipment_listBox.Size = new System.Drawing.Size(182, 52);
             this.gps_equipment_listBox.TabIndex = 26;
             this.gps_equipment_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
             // gps_equipment_textBox
             // 
-            this.gps_equipment_textBox.Location = new System.Drawing.Point(9, 37);
+            this.gps_equipment_textBox.Location = new System.Drawing.Point(9, 34);
             this.gps_equipment_textBox.Name = "gps_equipment_textBox";
-            this.gps_equipment_textBox.Size = new System.Drawing.Size(182, 20);
+            this.gps_equipment_textBox.Size = new System.Drawing.Size(182, 21);
             this.gps_equipment_textBox.TabIndex = 25;
             // 
             // tabPage12
             // 
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(525, 407);
+            this.tabPage12.Size = new System.Drawing.Size(525, 372);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "Ultrasound";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -2518,7 +2549,7 @@
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(525, 407);
+            this.tabPage7.Size = new System.Drawing.Size(525, 372);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Steering Wheel Angle";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2527,7 +2558,7 @@
             // 
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(525, 407);
+            this.tabPage9.Size = new System.Drawing.Size(525, 372);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Speed";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2536,7 +2567,7 @@
             // 
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(525, 407);
+            this.tabPage10.Size = new System.Drawing.Size(525, 372);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "Ambient Light";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2545,7 +2576,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(525, 407);
+            this.tabPage6.Size = new System.Drawing.Size(525, 372);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Rain";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2554,7 +2585,7 @@
             // 
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(525, 407);
+            this.tabPage11.Size = new System.Drawing.Size(525, 372);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "TPMS";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -2563,7 +2594,7 @@
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(525, 407);
+            this.tabPage8.Size = new System.Drawing.Size(525, 372);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "IR Night Vision";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2572,7 +2603,7 @@
             // 
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(525, 407);
+            this.tabPage13.Size = new System.Drawing.Size(525, 372);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Odometry";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -2591,7 +2622,7 @@
             // splitContainer_sensor_3_4.Panel2
             // 
             this.splitContainer_sensor_3_4.Panel2.Controls.Add(this.groupBox_roadcondition);
-            this.splitContainer_sensor_3_4.Size = new System.Drawing.Size(302, 458);
+            this.splitContainer_sensor_3_4.Size = new System.Drawing.Size(302, 418);
             this.splitContainer_sensor_3_4.SplitterDistance = 154;
             this.splitContainer_sensor_3_4.TabIndex = 12;
             // 
@@ -2602,7 +2633,7 @@
             this.groupBox_trafficctrl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_trafficctrl.Location = new System.Drawing.Point(0, 0);
             this.groupBox_trafficctrl.Name = "groupBox_trafficctrl";
-            this.groupBox_trafficctrl.Size = new System.Drawing.Size(152, 456);
+            this.groupBox_trafficctrl.Size = new System.Drawing.Size(152, 416);
             this.groupBox_trafficctrl.TabIndex = 0;
             this.groupBox_trafficctrl.TabStop = false;
             this.groupBox_trafficctrl.Text = "Traffic Control";
@@ -2611,9 +2642,9 @@
             // 
             this.groupBox_trafficpedestrain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_trafficpedestrain.Location = new System.Drawing.Point(6, 235);
+            this.groupBox_trafficpedestrain.Location = new System.Drawing.Point(6, 212);
             this.groupBox_trafficpedestrain.Name = "groupBox_trafficpedestrain";
-            this.groupBox_trafficpedestrain.Size = new System.Drawing.Size(138, 215);
+            this.groupBox_trafficpedestrain.Size = new System.Drawing.Size(138, 198);
             this.groupBox_trafficpedestrain.TabIndex = 1;
             this.groupBox_trafficpedestrain.TabStop = false;
             this.groupBox_trafficpedestrain.Text = "Pedestrain";
@@ -2623,9 +2654,9 @@
             this.groupBox_trafficcars.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_trafficcars.Location = new System.Drawing.Point(6, 22);
+            this.groupBox_trafficcars.Location = new System.Drawing.Point(6, 20);
             this.groupBox_trafficcars.Name = "groupBox_trafficcars";
-            this.groupBox_trafficcars.Size = new System.Drawing.Size(138, 207);
+            this.groupBox_trafficcars.Size = new System.Drawing.Size(138, 186);
             this.groupBox_trafficcars.TabIndex = 0;
             this.groupBox_trafficcars.TabStop = false;
             this.groupBox_trafficcars.Text = "Vehicle";
@@ -2635,16 +2666,16 @@
             this.groupBox_roadcondition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_roadcondition.Location = new System.Drawing.Point(0, 0);
             this.groupBox_roadcondition.Name = "groupBox_roadcondition";
-            this.groupBox_roadcondition.Size = new System.Drawing.Size(142, 456);
+            this.groupBox_roadcondition.Size = new System.Drawing.Size(142, 416);
             this.groupBox_roadcondition.TabIndex = 0;
             this.groupBox_roadcondition.TabStop = false;
             this.groupBox_roadcondition.Text = "Road Condition";
             // 
             // button_networktest
             // 
-            this.button_networktest.Location = new System.Drawing.Point(17, 37);
+            this.button_networktest.Location = new System.Drawing.Point(17, 34);
             this.button_networktest.Name = "button_networktest";
-            this.button_networktest.Size = new System.Drawing.Size(93, 23);
+            this.button_networktest.Size = new System.Drawing.Size(93, 21);
             this.button_networktest.TabIndex = 17;
             this.button_networktest.Text = "Network Test";
             this.button_networktest.UseVisualStyleBackColor = true;
@@ -2652,9 +2683,9 @@
             // label_releaseversion
             // 
             this.label_releaseversion.AutoSize = true;
-            this.label_releaseversion.Location = new System.Drawing.Point(5, 599);
+            this.label_releaseversion.Location = new System.Drawing.Point(5, 553);
             this.label_releaseversion.Name = "label_releaseversion";
-            this.label_releaseversion.Size = new System.Drawing.Size(114, 13);
+            this.label_releaseversion.Size = new System.Drawing.Size(137, 12);
             this.label_releaseversion.TabIndex = 16;
             this.label_releaseversion.Text = "Release Version: 1.02t";
             // 
@@ -2664,7 +2695,7 @@
             this.groupBox_systemmessagebox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_systemmessagebox.Location = new System.Drawing.Point(0, 0);
             this.groupBox_systemmessagebox.Name = "groupBox_systemmessagebox";
-            this.groupBox_systemmessagebox.Size = new System.Drawing.Size(1370, 88);
+            this.groupBox_systemmessagebox.Size = new System.Drawing.Size(1370, 81);
             this.groupBox_systemmessagebox.TabIndex = 0;
             this.groupBox_systemmessagebox.TabStop = false;
             // 
@@ -2676,7 +2707,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip_main.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_main.Name = "menuStrip_main";
-            this.menuStrip_main.Size = new System.Drawing.Size(1370, 24);
+            this.menuStrip_main.Size = new System.Drawing.Size(1370, 25);
             this.menuStrip_main.TabIndex = 18;
             this.menuStrip_main.Text = "menuStrip1";
             // 
@@ -2686,25 +2717,25 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // toolToolStripMenuItem
             // 
             this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
-            this.toolToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.toolToolStripMenuItem.Size = new System.Drawing.Size(46, 21);
             this.toolToolStripMenuItem.Text = "Tool";
             // 
             // aboutToolStripMenuItem
@@ -2713,43 +2744,76 @@
             this.helpToolStripMenuItem,
             this.versionToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.versionToolStripMenuItem.Text = "Version";
             // 
-            // comboBox_ecutype
+            // label33
             // 
-            this.comboBox_ecutype.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(15, 17);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(47, 12);
+            this.label33.TabIndex = 19;
+            this.label33.Text = "Control";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_ecutype.FormattingEnabled = true;
-            this.comboBox_ecutype.Items.AddRange(new object[] {
-            "Nvidia Drive PX2 AutoChauffeur",
-            "Nvidia Drive PX2 AutoCruise",
-            "Nvidia TX2",
-            "Vehicular VX1"});
-            this.comboBox_ecutype.Location = new System.Drawing.Point(10, 73);
-            this.comboBox_ecutype.Name = "comboBox_ecutype";
-            this.comboBox_ecutype.Size = new System.Drawing.Size(157, 21);
-            this.comboBox_ecutype.TabIndex = 12;
-            this.comboBox_ecutype.SelectedIndex = 0;
-            this.comboBox_ecutype.SelectedIndexChanged += new System.EventHandler(this.comboBox_ecutype_SelectedIndexChanged);
+            this.groupBox5.Controls.Add(this.radioButton_runbywires);
+            this.groupBox5.Controls.Add(this.radioButton_runbywaypoints);
+            this.groupBox5.Controls.Add(this.button_runpause);
+            this.groupBox5.Controls.Add(this.label33);
+            this.groupBox5.Controls.Add(this.button_run);
+            this.groupBox5.Controls.Add(this.checkBox_recording);
+            this.groupBox5.Location = new System.Drawing.Point(3, 424);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(180, 150);
+            this.groupBox5.TabIndex = 20;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Run";
+            // 
+            // radioButton_runbywaypoints
+            // 
+            this.radioButton_runbywaypoints.AutoSize = true;
+            this.radioButton_runbywaypoints.Checked = true;
+            this.radioButton_runbywaypoints.Location = new System.Drawing.Point(81, 15);
+            this.radioButton_runbywaypoints.Name = "radioButton_runbywaypoints";
+            this.radioButton_runbywaypoints.Size = new System.Drawing.Size(77, 16);
+            this.radioButton_runbywaypoints.TabIndex = 20;
+            this.radioButton_runbywaypoints.TabStop = true;
+            this.radioButton_runbywaypoints.Text = "Waypoints";
+            this.radioButton_runbywaypoints.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_runbywires
+            // 
+            this.radioButton_runbywires.AutoSize = true;
+            this.radioButton_runbywires.Location = new System.Drawing.Point(81, 34);
+            this.radioButton_runbywires.Name = "radioButton_runbywires";
+            this.radioButton_runbywires.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_runbywires.TabIndex = 21;
+            this.radioButton_runbywires.TabStop = true;
+            this.radioButton_runbywires.Text = "By Wires";
+            this.radioButton_runbywires.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1370, 691);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Reminder);
             this.Controls.Add(this.menuStrip_main);
@@ -2855,6 +2919,8 @@
             this.groupBox_systemmessagebox.ResumeLayout(false);
             this.menuStrip_main.ResumeLayout(false);
             this.menuStrip_main.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3079,9 +3145,13 @@
         private System.Windows.Forms.GroupBox groupBox_roadcondition;
         private System.Windows.Forms.GroupBox groupBox_terrain;
         private System.Windows.Forms.Button button_networktest;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_terraintype;
         private System.Windows.Forms.GroupBox groupBox_sensors;
         private System.Windows.Forms.ComboBox comboBox_ecutype;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton radioButton_runbywires;
+        private System.Windows.Forms.RadioButton radioButton_runbywaypoints;
+        private System.Windows.Forms.Label label33;
     }
 }
 

@@ -1921,6 +1921,11 @@ namespace vehicular_simulation
             this.textBox_port.Text = "13010";
         }
 
+        private void comboBox_ecutype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         /*delegate void SetMessageCallback(string message);
         public void SetMessage(string message)
         {

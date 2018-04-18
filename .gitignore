@@ -23,3 +23,5 @@ vai_gui_consoler.pdb
 *.ide-wal
 gui_consoler/vai_gui_consoler/bin/Debug/vai_gui_consoler.exe
 gui_consoler/vai_gui_consoler/bin/Debug/vai_gui_consoler.pdb
+gui_consoler/vai_gui_consoler/bin/Debug/vai_gui_consoler.vshost.exe.manifest
+gui_consoler/vai_gui_consoler/bin/Debug/vai_gui_consoler.vshost.exe

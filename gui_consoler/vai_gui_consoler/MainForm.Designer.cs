@@ -143,8 +143,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer_main = new System.Windows.Forms.SplitContainer();
             this.splitContainer_connection = new System.Windows.Forms.SplitContainer();
-            this.checkBox_saveip = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.radioButton_runbywires = new System.Windows.Forms.RadioButton();
+            this.radioButton_runbywaypoints = new System.Windows.Forms.RadioButton();
             this.button_runpause = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.checkBox_saveip = new System.Windows.Forms.CheckBox();
             this.splitContainer_path = new System.Windows.Forms.SplitContainer();
             this.groupBox_terrain = new System.Windows.Forms.GroupBox();
             this.comboBox_terraintype = new System.Windows.Forms.ComboBox();
@@ -250,10 +254,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label33 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton_runbywaypoints = new System.Windows.Forms.RadioButton();
-            this.radioButton_runbywires = new System.Windows.Forms.RadioButton();
             this.groupBox_trigger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -284,6 +284,7 @@
             this.splitContainer_connection.Panel1.SuspendLayout();
             this.splitContainer_connection.Panel2.SuspendLayout();
             this.splitContainer_connection.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.splitContainer_path.Panel1.SuspendLayout();
             this.splitContainer_path.Panel2.SuspendLayout();
             this.splitContainer_path.SuspendLayout();
@@ -321,7 +322,6 @@
             this.groupBox_trafficctrl.SuspendLayout();
             this.groupBox_systemmessagebox.SuspendLayout();
             this.menuStrip_main.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_trigger
@@ -1600,15 +1600,46 @@
             this.splitContainer_connection.SplitterDistance = 185;
             this.splitContainer_connection.TabIndex = 2;
             // 
-            // checkBox_saveip
+            // groupBox5
             // 
-            this.checkBox_saveip.AutoSize = true;
-            this.checkBox_saveip.Location = new System.Drawing.Point(3, 11);
-            this.checkBox_saveip.Name = "checkBox_saveip";
-            this.checkBox_saveip.Size = new System.Drawing.Size(126, 16);
-            this.checkBox_saveip.TabIndex = 18;
-            this.checkBox_saveip.Text = "Save Network Info";
-            this.checkBox_saveip.UseVisualStyleBackColor = true;
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.radioButton_runbywires);
+            this.groupBox5.Controls.Add(this.radioButton_runbywaypoints);
+            this.groupBox5.Controls.Add(this.button_runpause);
+            this.groupBox5.Controls.Add(this.label33);
+            this.groupBox5.Controls.Add(this.button_run);
+            this.groupBox5.Controls.Add(this.checkBox_recording);
+            this.groupBox5.Location = new System.Drawing.Point(3, 424);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(180, 150);
+            this.groupBox5.TabIndex = 20;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Run";
+            // 
+            // radioButton_runbywires
+            // 
+            this.radioButton_runbywires.AutoSize = true;
+            this.radioButton_runbywires.Location = new System.Drawing.Point(81, 34);
+            this.radioButton_runbywires.Name = "radioButton_runbywires";
+            this.radioButton_runbywires.Size = new System.Drawing.Size(71, 16);
+            this.radioButton_runbywires.TabIndex = 21;
+            this.radioButton_runbywires.TabStop = true;
+            this.radioButton_runbywires.Text = "By Wires";
+            this.radioButton_runbywires.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_runbywaypoints
+            // 
+            this.radioButton_runbywaypoints.AutoSize = true;
+            this.radioButton_runbywaypoints.Checked = true;
+            this.radioButton_runbywaypoints.Location = new System.Drawing.Point(81, 15);
+            this.radioButton_runbywaypoints.Name = "radioButton_runbywaypoints";
+            this.radioButton_runbywaypoints.Size = new System.Drawing.Size(77, 16);
+            this.radioButton_runbywaypoints.TabIndex = 20;
+            this.radioButton_runbywaypoints.TabStop = true;
+            this.radioButton_runbywaypoints.Text = "Waypoints";
+            this.radioButton_runbywaypoints.UseVisualStyleBackColor = true;
             // 
             // button_runpause
             // 
@@ -1620,6 +1651,25 @@
             this.button_runpause.TabIndex = 17;
             this.button_runpause.Text = "Pause";
             this.button_runpause.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(15, 17);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(47, 12);
+            this.label33.TabIndex = 19;
+            this.label33.Text = "Control";
+            // 
+            // checkBox_saveip
+            // 
+            this.checkBox_saveip.AutoSize = true;
+            this.checkBox_saveip.Location = new System.Drawing.Point(3, 11);
+            this.checkBox_saveip.Name = "checkBox_saveip";
+            this.checkBox_saveip.Size = new System.Drawing.Size(126, 16);
+            this.checkBox_saveip.TabIndex = 18;
+            this.checkBox_saveip.Text = "Save Network Info";
+            this.checkBox_saveip.UseVisualStyleBackColor = true;
             // 
             // splitContainer_path
             // 
@@ -1826,11 +1876,11 @@
             // 
             // tabControl_sensors
             // 
-            this.tabControl_sensors.Controls.Add(this.tabPage5);
             this.tabControl_sensors.Controls.Add(this.tabPage1);
             this.tabControl_sensors.Controls.Add(this.tabPage2);
             this.tabControl_sensors.Controls.Add(this.tabPage3);
             this.tabControl_sensors.Controls.Add(this.tabPage4);
+            this.tabControl_sensors.Controls.Add(this.tabPage5);
             this.tabControl_sensors.Controls.Add(this.tabPage12);
             this.tabControl_sensors.Controls.Add(this.tabPage7);
             this.tabControl_sensors.Controls.Add(this.tabPage9);
@@ -2759,56 +2809,6 @@
             this.versionToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.versionToolStripMenuItem.Text = "Version";
             // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(15, 17);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(47, 12);
-            this.label33.TabIndex = 19;
-            this.label33.Text = "Control";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.radioButton_runbywires);
-            this.groupBox5.Controls.Add(this.radioButton_runbywaypoints);
-            this.groupBox5.Controls.Add(this.button_runpause);
-            this.groupBox5.Controls.Add(this.label33);
-            this.groupBox5.Controls.Add(this.button_run);
-            this.groupBox5.Controls.Add(this.checkBox_recording);
-            this.groupBox5.Location = new System.Drawing.Point(3, 424);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(180, 150);
-            this.groupBox5.TabIndex = 20;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Run";
-            // 
-            // radioButton_runbywaypoints
-            // 
-            this.radioButton_runbywaypoints.AutoSize = true;
-            this.radioButton_runbywaypoints.Checked = true;
-            this.radioButton_runbywaypoints.Location = new System.Drawing.Point(81, 15);
-            this.radioButton_runbywaypoints.Name = "radioButton_runbywaypoints";
-            this.radioButton_runbywaypoints.Size = new System.Drawing.Size(77, 16);
-            this.radioButton_runbywaypoints.TabIndex = 20;
-            this.radioButton_runbywaypoints.TabStop = true;
-            this.radioButton_runbywaypoints.Text = "Waypoints";
-            this.radioButton_runbywaypoints.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_runbywires
-            // 
-            this.radioButton_runbywires.AutoSize = true;
-            this.radioButton_runbywires.Location = new System.Drawing.Point(81, 34);
-            this.radioButton_runbywires.Name = "radioButton_runbywires";
-            this.radioButton_runbywires.Size = new System.Drawing.Size(71, 16);
-            this.radioButton_runbywires.TabIndex = 21;
-            this.radioButton_runbywires.TabStop = true;
-            this.radioButton_runbywires.Text = "By Wires";
-            this.radioButton_runbywires.UseVisualStyleBackColor = true;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2871,6 +2871,8 @@
             this.splitContainer_connection.Panel1.PerformLayout();
             this.splitContainer_connection.Panel2.ResumeLayout(false);
             this.splitContainer_connection.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.splitContainer_path.Panel1.ResumeLayout(false);
             this.splitContainer_path.Panel1.PerformLayout();
             this.splitContainer_path.Panel2.ResumeLayout(false);
@@ -2919,8 +2921,6 @@
             this.groupBox_systemmessagebox.ResumeLayout(false);
             this.menuStrip_main.ResumeLayout(false);
             this.menuStrip_main.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1755,7 +1755,10 @@ namespace vehicular_simulation
         public bool isSending_CAR_RUN = false;
         private void button_ignon_Click(object sender, EventArgs e)
         {
-            socketClient.SendMessage("<<" + MessageCatalog.CAR_RUN + ">>:ON");
+            int ctrlByWire = 0;
+            if (this.radioButton_runbywaypoints.Checked)
+                ctrlByWire = 1;
+            socketClient.SendMessage("<<" + MessageCatalog.CAR_RUN + ">>:ON:"+ctrlByWire);
 
             isSending_CAR_RUN = true;
 
